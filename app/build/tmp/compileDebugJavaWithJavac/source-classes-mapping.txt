@@ -1,0 +1,2 @@
+com/vaporstream/android_codetest/BuildConfig.java
+ com.vaporstream.android_codetest.BuildConfig

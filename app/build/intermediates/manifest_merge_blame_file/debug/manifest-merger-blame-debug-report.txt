@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:8:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\Darry\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
+13-->[androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
 15-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:9:9-43
@@ -28,9 +28,9 @@
 19        android:testOnly="true"
 20        android:theme="@style/AppTheme" >
 20-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:13:9-40
-21        <activity android:name="com.vaporstream.android_codetest.main.MainActivity" >
+21        <activity android:name="com.vaporstream.android_codetest.view.main.MainActivity" >
 21-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:16:9-21:20
-21-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:16:19-52
+21-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:16:19-89
 22            <intent-filter>
 22-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:17:13-20:29
 23                <action android:name="android.intent.action.MAIN" />
@@ -42,9 +42,9 @@
 25-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:19:27-74
 26            </intent-filter>
 27        </activity>
-28        <activity android:name="com.vaporstream.android_codetest.results.ResultsActivity" />
-28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:9-61
-28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:19-58
+28        <activity android:name="com.vaporstream.android_codetest.view.results.ResultsActivity" />
+28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:9-98
+28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:19-95
 29    </application>
 30
 31</manifest>
