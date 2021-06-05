@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var zipCodeEditText: EditText? = null
     private var clearButton: Button? = null
     private var submitButton: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
