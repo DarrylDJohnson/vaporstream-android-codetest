@@ -115,6 +115,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"
+            android:onClick="@{() -> viewmodel.submit()}"
+            android:enabled="@{viewmodel.submitEnabled}"
             app:layout_constraintBottom_toTopOf="@id/button_clear"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

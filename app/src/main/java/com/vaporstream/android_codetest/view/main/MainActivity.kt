@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         /* Button.onClickListeners */
         binding.buttonClear.setOnClickListener { viewModel.clear() }
-        binding.buttonSubmit.setOnClickListener { viewModel.submit() }
     }
 
     private fun submitForm() {

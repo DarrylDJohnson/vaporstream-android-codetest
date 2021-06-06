@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-public class ActivityMainBindingImpl extends ActivityMainBinding  {
+public class ActivityMainBindingImpl extends ActivityMainBinding implements com.vaporstream.android_codetest.generated.callback.OnClickListener.Listener {
 
     @Nullable
     private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
@@ -14,13 +14,14 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.button_submit, 9);
         sViewsWithIds.put(R.id.button_clear, 10);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
+    @Nullable
+    private final android.view.View.OnClickListener mCallback1;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -325,7 +326,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 10
+        super(bindingComponent, root, 11
             , (android.widget.Button) bindings[10]
             , (android.widget.Button) bindings[9]
             , (android.widget.EditText) bindings[4]
@@ -337,6 +338,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             , (android.widget.EditText) bindings[8]
             , (android.widget.Spinner) bindings[7]
             );
+        this.buttonSubmit.setTag(null);
         this.editTextAddressOne.setTag(null);
         this.editTextAddressTwo.setTag(null);
         this.editTextCity.setTag(null);
@@ -349,13 +351,14 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         this.spinnerStates.setTag(null);
         setRootTag(root);
         // listeners
+        mCallback1 = new com.vaporstream.android_codetest.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x400L;
+                mDirtyFlags = 0x800L;
         }
         requestRebind();
     }
@@ -383,10 +386,10 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     }
 
     public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel) {
-        updateRegistration(9, Viewmodel);
+        updateRegistration(10, Viewmodel);
         this.mViewmodel = Viewmodel;
         synchronized(this) {
-            mDirtyFlags |= 0x200L;
+            mDirtyFlags |= 0x400L;
         }
         notifyPropertyChanged(BR.viewmodel);
         super.requestRebind();
@@ -396,41 +399,34 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeViewmodelAddressTwo((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 1 :
                 return onChangeViewmodelStatesArray((androidx.databinding.ObservableArrayList<java.lang.String>) object, fieldId);
-            case 2 :
+            case 1 :
                 return onChangeViewmodelLastName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 3 :
-                return onChangeViewmodelAddressOne((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 4 :
+            case 2 :
                 return onChangeViewmodelCity((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 5 :
+            case 3 :
                 return onChangeViewmodelState((androidx.lifecycle.MutableLiveData<java.lang.Integer>) object, fieldId);
-            case 6 :
-                return onChangeViewmodelFirstName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 7 :
+            case 4 :
                 return onChangeViewmodelPhoneNumber((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 8 :
+            case 5 :
                 return onChangeViewmodelZipCode((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+            case 6 :
+                return onChangeViewmodelAddressTwo((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+            case 7 :
+                return onChangeViewmodelSubmitEnabled((androidx.lifecycle.MediatorLiveData<java.lang.Boolean>) object, fieldId);
+            case 8 :
+                return onChangeViewmodelAddressOne((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
             case 9 :
+                return onChangeViewmodelFirstName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+            case 10 :
                 return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.UserViewModel) object, fieldId);
-        }
-        return false;
-    }
-    private boolean onChangeViewmodelAddressTwo(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelAddressTwo, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x1L;
-            }
-            return true;
         }
         return false;
     }
     private boolean onChangeViewmodelStatesArray(androidx.databinding.ObservableArrayList<java.lang.String> ViewmodelStatesArray, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x2L;
+                    mDirtyFlags |= 0x1L;
             }
             return true;
         }
@@ -439,16 +435,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodelLastName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelLastName, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x4L;
-            }
-            return true;
-        }
-        return false;
-    }
-    private boolean onChangeViewmodelAddressOne(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelAddressOne, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x8L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
@@ -457,7 +444,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodelCity(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelCity, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x10L;
+                    mDirtyFlags |= 0x4L;
             }
             return true;
         }
@@ -466,16 +453,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodelState(androidx.lifecycle.MutableLiveData<java.lang.Integer> ViewmodelState, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x20L;
-            }
-            return true;
-        }
-        return false;
-    }
-    private boolean onChangeViewmodelFirstName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelFirstName, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x40L;
+                    mDirtyFlags |= 0x8L;
             }
             return true;
         }
@@ -484,7 +462,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodelPhoneNumber(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelPhoneNumber, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x80L;
+                    mDirtyFlags |= 0x10L;
             }
             return true;
         }
@@ -493,7 +471,43 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodelZipCode(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelZipCode, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
+                    mDirtyFlags |= 0x20L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeViewmodelAddressTwo(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelAddressTwo, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x40L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeViewmodelSubmitEnabled(androidx.lifecycle.MediatorLiveData<java.lang.Boolean> ViewmodelSubmitEnabled, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x80L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeViewmodelAddressOne(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelAddressOne, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
                     mDirtyFlags |= 0x100L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeViewmodelFirstName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelFirstName, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x200L;
             }
             return true;
         }
@@ -502,55 +516,61 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x200L;
+                    mDirtyFlags |= 0x400L;
             }
             return true;
         }
         else if (fieldId == BR.firstName) {
             synchronized(this) {
-                    mDirtyFlags |= 0x40L;
+                    mDirtyFlags |= 0x200L;
             }
             return true;
         }
         else if (fieldId == BR.lastName) {
             synchronized(this) {
-                    mDirtyFlags |= 0x4L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
         else if (fieldId == BR.phoneNumber) {
             synchronized(this) {
-                    mDirtyFlags |= 0x80L;
+                    mDirtyFlags |= 0x10L;
             }
             return true;
         }
         else if (fieldId == BR.addressOne) {
             synchronized(this) {
-                    mDirtyFlags |= 0x8L;
+                    mDirtyFlags |= 0x100L;
             }
             return true;
         }
         else if (fieldId == BR.addressTwo) {
             synchronized(this) {
-                    mDirtyFlags |= 0x1L;
+                    mDirtyFlags |= 0x40L;
             }
             return true;
         }
         else if (fieldId == BR.city) {
             synchronized(this) {
-                    mDirtyFlags |= 0x10L;
+                    mDirtyFlags |= 0x4L;
             }
             return true;
         }
         else if (fieldId == BR.state) {
             synchronized(this) {
-                    mDirtyFlags |= 0x20L;
+                    mDirtyFlags |= 0x8L;
             }
             return true;
         }
         else if (fieldId == BR.zipCode) {
             synchronized(this) {
-                    mDirtyFlags |= 0x100L;
+                    mDirtyFlags |= 0x20L;
+            }
+            return true;
+        }
+        else if (fieldId == BR.submitEnabled) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x80L;
             }
             return true;
         }
@@ -565,57 +585,46 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             mDirtyFlags = 0;
         }
         int androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue = 0;
-        java.lang.String viewmodelAddressTwoGetValue = null;
-        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressTwo = null;
         androidx.databinding.ObservableArrayList<java.lang.String> viewmodelStatesArray = null;
         java.lang.String viewmodelFirstNameGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelLastName = null;
         java.lang.String viewmodelZipCodeGetValue = null;
-        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressOne = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelCity = null;
-        java.lang.Integer viewmodelStateGetValue = null;
-        java.lang.String viewmodelLastNameGetValue = null;
         java.lang.String viewmodelAddressOneGetValue = null;
         java.lang.String viewmodelCityGetValue = null;
         java.lang.String viewmodelPhoneNumberGetValue = null;
+        java.lang.Boolean viewmodelSubmitEnabledGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.Integer> viewmodelState = null;
-        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelFirstName = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelPhoneNumber = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelZipCode = null;
+        boolean androidxDatabindingViewDataBindingSafeUnboxViewmodelSubmitEnabledGetValue = false;
+        java.lang.String viewmodelAddressTwoGetValue = null;
+        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressTwo = null;
+        androidx.lifecycle.MediatorLiveData<java.lang.Boolean> viewmodelSubmitEnabled = null;
+        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressOne = null;
+        java.lang.Integer viewmodelStateGetValue = null;
+        java.lang.String viewmodelLastNameGetValue = null;
+        androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelFirstName = null;
         com.vaporstream.android_codetest.viewmodel.UserViewModel viewmodel = mViewmodel;
 
-        if ((dirtyFlags & 0x7ffL) != 0) {
+        if ((dirtyFlags & 0xfffL) != 0) {
 
 
-            if ((dirtyFlags & 0x601L) != 0) {
-
-                    if (viewmodel != null) {
-                        // read viewmodel.addressTwo
-                        viewmodelAddressTwo = viewmodel.getAddressTwo();
-                    }
-                    updateLiveDataRegistration(0, viewmodelAddressTwo);
-
-
-                    if (viewmodelAddressTwo != null) {
-                        // read viewmodel.addressTwo.getValue()
-                        viewmodelAddressTwoGetValue = viewmodelAddressTwo.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x602L) != 0) {
+            if ((dirtyFlags & 0xc01L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.statesArray
                         viewmodelStatesArray = viewmodel.getStatesArray();
                     }
-                    updateRegistration(1, viewmodelStatesArray);
+                    updateRegistration(0, viewmodelStatesArray);
             }
-            if ((dirtyFlags & 0x604L) != 0) {
+            if ((dirtyFlags & 0xc02L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.lastName
                         viewmodelLastName = viewmodel.getLastName();
                     }
-                    updateLiveDataRegistration(2, viewmodelLastName);
+                    updateLiveDataRegistration(1, viewmodelLastName);
 
 
                     if (viewmodelLastName != null) {
@@ -623,27 +632,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
                         viewmodelLastNameGetValue = viewmodelLastName.getValue();
                     }
             }
-            if ((dirtyFlags & 0x608L) != 0) {
-
-                    if (viewmodel != null) {
-                        // read viewmodel.addressOne
-                        viewmodelAddressOne = viewmodel.getAddressOne();
-                    }
-                    updateLiveDataRegistration(3, viewmodelAddressOne);
-
-
-                    if (viewmodelAddressOne != null) {
-                        // read viewmodel.addressOne.getValue()
-                        viewmodelAddressOneGetValue = viewmodelAddressOne.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x610L) != 0) {
+            if ((dirtyFlags & 0xc04L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.city
                         viewmodelCity = viewmodel.getCity();
                     }
-                    updateLiveDataRegistration(4, viewmodelCity);
+                    updateLiveDataRegistration(2, viewmodelCity);
 
 
                     if (viewmodelCity != null) {
@@ -651,13 +646,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
                         viewmodelCityGetValue = viewmodelCity.getValue();
                     }
             }
-            if ((dirtyFlags & 0x620L) != 0) {
+            if ((dirtyFlags & 0xc08L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.state
                         viewmodelState = viewmodel.getState();
                     }
-                    updateLiveDataRegistration(5, viewmodelState);
+                    updateLiveDataRegistration(3, viewmodelState);
 
 
                     if (viewmodelState != null) {
@@ -669,27 +664,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
                     // read androidx.databinding.ViewDataBinding.safeUnbox(viewmodel.state.getValue())
                     androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue = androidx.databinding.ViewDataBinding.safeUnbox(viewmodelStateGetValue);
             }
-            if ((dirtyFlags & 0x640L) != 0) {
-
-                    if (viewmodel != null) {
-                        // read viewmodel.firstName
-                        viewmodelFirstName = viewmodel.getFirstName();
-                    }
-                    updateLiveDataRegistration(6, viewmodelFirstName);
-
-
-                    if (viewmodelFirstName != null) {
-                        // read viewmodel.firstName.getValue()
-                        viewmodelFirstNameGetValue = viewmodelFirstName.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x680L) != 0) {
+            if ((dirtyFlags & 0xc10L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.phoneNumber
                         viewmodelPhoneNumber = viewmodel.getPhoneNumber();
                     }
-                    updateLiveDataRegistration(7, viewmodelPhoneNumber);
+                    updateLiveDataRegistration(4, viewmodelPhoneNumber);
 
 
                     if (viewmodelPhoneNumber != null) {
@@ -697,13 +678,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
                         viewmodelPhoneNumberGetValue = viewmodelPhoneNumber.getValue();
                     }
             }
-            if ((dirtyFlags & 0x700L) != 0) {
+            if ((dirtyFlags & 0xc20L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.zipCode
                         viewmodelZipCode = viewmodel.getZipCode();
                     }
-                    updateLiveDataRegistration(8, viewmodelZipCode);
+                    updateLiveDataRegistration(5, viewmodelZipCode);
 
 
                     if (viewmodelZipCode != null) {
@@ -711,16 +692,72 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
                         viewmodelZipCodeGetValue = viewmodelZipCode.getValue();
                     }
             }
+            if ((dirtyFlags & 0xc40L) != 0) {
+
+                    if (viewmodel != null) {
+                        // read viewmodel.addressTwo
+                        viewmodelAddressTwo = viewmodel.getAddressTwo();
+                    }
+                    updateLiveDataRegistration(6, viewmodelAddressTwo);
+
+
+                    if (viewmodelAddressTwo != null) {
+                        // read viewmodel.addressTwo.getValue()
+                        viewmodelAddressTwoGetValue = viewmodelAddressTwo.getValue();
+                    }
+            }
+            if ((dirtyFlags & 0xc80L) != 0) {
+
+                    if (viewmodel != null) {
+                        // read viewmodel.submitEnabled
+                        viewmodelSubmitEnabled = viewmodel.getSubmitEnabled();
+                    }
+                    updateLiveDataRegistration(7, viewmodelSubmitEnabled);
+
+
+                    if (viewmodelSubmitEnabled != null) {
+                        // read viewmodel.submitEnabled.getValue()
+                        viewmodelSubmitEnabledGetValue = viewmodelSubmitEnabled.getValue();
+                    }
+
+
+                    // read androidx.databinding.ViewDataBinding.safeUnbox(viewmodel.submitEnabled.getValue())
+                    androidxDatabindingViewDataBindingSafeUnboxViewmodelSubmitEnabledGetValue = androidx.databinding.ViewDataBinding.safeUnbox(viewmodelSubmitEnabledGetValue);
+            }
+            if ((dirtyFlags & 0xd00L) != 0) {
+
+                    if (viewmodel != null) {
+                        // read viewmodel.addressOne
+                        viewmodelAddressOne = viewmodel.getAddressOne();
+                    }
+                    updateLiveDataRegistration(8, viewmodelAddressOne);
+
+
+                    if (viewmodelAddressOne != null) {
+                        // read viewmodel.addressOne.getValue()
+                        viewmodelAddressOneGetValue = viewmodelAddressOne.getValue();
+                    }
+            }
+            if ((dirtyFlags & 0xe00L) != 0) {
+
+                    if (viewmodel != null) {
+                        // read viewmodel.firstName
+                        viewmodelFirstName = viewmodel.getFirstName();
+                    }
+                    updateLiveDataRegistration(9, viewmodelFirstName);
+
+
+                    if (viewmodelFirstName != null) {
+                        // read viewmodel.firstName.getValue()
+                        viewmodelFirstNameGetValue = viewmodelFirstName.getValue();
+                    }
+            }
         }
         // batch finished
-        if ((dirtyFlags & 0x608L) != 0) {
+        if ((dirtyFlags & 0x800L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextAddressOne, viewmodelAddressOneGetValue);
-        }
-        if ((dirtyFlags & 0x400L) != 0) {
-            // api target 1
-
+            this.buttonSubmit.setOnClickListener(mCallback1);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressOne, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressOneandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressTwo, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressTwoandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextCity, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextCityandroidTextAttrChanged);
@@ -730,42 +767,52 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextZipcode, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextZipcodeandroidTextAttrChanged);
             androidx.databinding.adapters.AdapterViewBindingAdapter.setOnItemSelectedListener(this.spinnerStates, (androidx.databinding.adapters.AdapterViewBindingAdapter.OnItemSelected)null, (androidx.databinding.adapters.AdapterViewBindingAdapter.OnNothingSelected)null, spinnerStatesandroidSelectedItemPositionAttrChanged);
         }
-        if ((dirtyFlags & 0x601L) != 0) {
+        if ((dirtyFlags & 0xc80L) != 0) {
+            // api target 1
+
+            this.buttonSubmit.setEnabled(androidxDatabindingViewDataBindingSafeUnboxViewmodelSubmitEnabledGetValue);
+        }
+        if ((dirtyFlags & 0xd00L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextAddressOne, viewmodelAddressOneGetValue);
+        }
+        if ((dirtyFlags & 0xc40L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextAddressTwo, viewmodelAddressTwoGetValue);
         }
-        if ((dirtyFlags & 0x610L) != 0) {
+        if ((dirtyFlags & 0xc04L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextCity, viewmodelCityGetValue);
         }
-        if ((dirtyFlags & 0x640L) != 0) {
+        if ((dirtyFlags & 0xe00L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextFirstName, viewmodelFirstNameGetValue);
         }
-        if ((dirtyFlags & 0x604L) != 0) {
+        if ((dirtyFlags & 0xc02L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextLastName, viewmodelLastNameGetValue);
         }
-        if ((dirtyFlags & 0x680L) != 0) {
+        if ((dirtyFlags & 0xc10L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextPhoneNumber, viewmodelPhoneNumberGetValue);
         }
-        if ((dirtyFlags & 0x700L) != 0) {
+        if ((dirtyFlags & 0xc20L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextZipcode, viewmodelZipCodeGetValue);
         }
-        if ((dirtyFlags & 0x602L) != 0) {
+        if ((dirtyFlags & 0xc01L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.AbsSpinnerBindingAdapter.setEntries(this.spinnerStates, viewmodelStatesArray);
         }
-        if ((dirtyFlags & 0x620L) != 0) {
+        if ((dirtyFlags & 0xc08L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.AdapterViewBindingAdapter.setSelectedItemPosition(this.spinnerStates, androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue);
@@ -773,20 +820,37 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     }
     // Listener Stub Implementations
     // callback impls
+    public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
+        // localize variables for thread safety
+        // viewmodel != null
+        boolean viewmodelJavaLangObjectNull = false;
+        // viewmodel
+        com.vaporstream.android_codetest.viewmodel.UserViewModel viewmodel = mViewmodel;
+
+
+
+        viewmodelJavaLangObjectNull = (viewmodel) != (null);
+        if (viewmodelJavaLangObjectNull) {
+
+
+            viewmodel.submit();
+        }
+    }
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): viewmodel.addressTwo
-        flag 1 (0x2L): viewmodel.statesArray
-        flag 2 (0x3L): viewmodel.lastName
-        flag 3 (0x4L): viewmodel.addressOne
-        flag 4 (0x5L): viewmodel.city
-        flag 5 (0x6L): viewmodel.state
-        flag 6 (0x7L): viewmodel.firstName
-        flag 7 (0x8L): viewmodel.phoneNumber
-        flag 8 (0x9L): viewmodel.zipCode
-        flag 9 (0xaL): viewmodel
-        flag 10 (0xbL): null
+        flag 0 (0x1L): viewmodel.statesArray
+        flag 1 (0x2L): viewmodel.lastName
+        flag 2 (0x3L): viewmodel.city
+        flag 3 (0x4L): viewmodel.state
+        flag 4 (0x5L): viewmodel.phoneNumber
+        flag 5 (0x6L): viewmodel.zipCode
+        flag 6 (0x7L): viewmodel.addressTwo
+        flag 7 (0x8L): viewmodel.submitEnabled
+        flag 8 (0x9L): viewmodel.addressOne
+        flag 9 (0xaL): viewmodel.firstName
+        flag 10 (0xbL): viewmodel
+        flag 11 (0xcL): null
     flag mapping end*/
     //end
 }

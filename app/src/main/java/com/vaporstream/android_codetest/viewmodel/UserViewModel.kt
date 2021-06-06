@@ -5,10 +5,7 @@ import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableArrayList
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.model.User
 import kotlinx.coroutines.launch
@@ -47,6 +44,8 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
 
     val statesArray = ObservableArrayList<String>()
 
+    @Bindable
+    val submitEnabled = MediatorLiveData<Boolean>()
 
     init {
         viewModelScope.launch {
@@ -59,9 +58,30 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
             state.value = 0
             zipCode.value = ""
 
+            submitEnabled.addSources(firstName, lastName, phoneNumber, addressOne, city, state, zipCode) {
+                submitEnabled.value = validate(firstName, lastName, phoneNumber, addressOne, city, state, zipCode)
+            }
+
             statesArray.addAll(application.resources.getStringArray(R.array.states_array))
         }
+    }
 
+    private fun validate(
+            firstName: MutableLiveData<String>,
+            lastName: MutableLiveData<String>,
+            phoneNumber: MutableLiveData<String>,
+            addressOne: MutableLiveData<String>,
+            city: MutableLiveData<String>,
+            state: MutableLiveData<Int>,
+            zipCode: MutableLiveData<String>
+    ): Boolean {
+        return !firstName.value.isNullOrBlank() &&
+                !lastName.value.isNullOrBlank() &&
+                PHONE_REGEX.toRegex().matches("${phoneNumber.value}") &&
+                !addressOne.value.isNullOrBlank() &&
+                !city.value.isNullOrBlank() &&
+                state.value != 0 &&
+                ZIP_CODE_REGEX.toRegex().matches("${zipCode.value}")
     }
 
     fun clear() {
@@ -75,32 +95,23 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
         zipCode.value = ""
     }
 
+
     fun submit() {
-
-        //Validate
-        val validFirstName: Boolean = !firstName.value.isNullOrBlank()
-        val validLastName: Boolean = !firstName.value.isNullOrBlank()
-        val validAddressOne: Boolean = !addressOne.value.isNullOrBlank()
-        val validCity: Boolean = !city.value.isNullOrBlank()
-        val validState: Boolean = state.value != 0
-        val validPhoneNumber: Boolean = "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$".toRegex().matches("${phoneNumber.value}")
-        val validZipCode: Boolean = "^\\d{5}(?:[-\\s]\\d{4})?\$".toRegex().matches("${zipCode.value}")
-
-        Log.d("SUBMIT", "submit: \n" +
-                "firstName: ${firstName.value} ($validFirstName)\n" +
-                "lastName: ${lastName.value} ($validLastName) \n" +
-                "phoneNumber: ${phoneNumber.value} ($validPhoneNumber) \n" +
-                "addressOne: ${addressOne.value} ($validAddressOne) \n" +
-                "addressTwo: ${addressTwo.value} \n" +
-                "city: ${city.value} ($validCity) \n" +
-                "state: ${state.value} ($validState)\n" +
-                "zipCode: ${zipCode.value} ($validZipCode) \n"
-        )
+        Log.d(TAG, "submit: click")
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
+
+    companion object {
+        private const val TAG = "UserViewModel"
+        private const val PHONE_REGEX = "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$"
+        private const val ZIP_CODE_REGEX = "^\\d{5}(?:[-\\s]\\d{4})?\$"
+    }
 }
 
+private fun <T> MediatorLiveData<T>.addSources(vararg sources: MutableLiveData<out Any>, onChanged: (Any) -> Unit) {
+    sources.forEach { this.addSource(it, onChanged) }
+}
 
