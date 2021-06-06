@@ -82,7 +82,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
         val validLastName: Boolean = !firstName.value.isNullOrBlank()
         val validAddressOne: Boolean = !addressOne.value.isNullOrBlank()
         val validCity: Boolean = !city.value.isNullOrBlank()
-
+        val validState: Boolean = state.value != 0
         val validPhoneNumber: Boolean = "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$".toRegex().matches("${phoneNumber.value}")
         val validZipCode: Boolean = "^\\d{5}(?:[-\\s]\\d{4})?\$".toRegex().matches("${zipCode.value}")
 
@@ -93,7 +93,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
                 "addressOne: ${addressOne.value} ($validAddressOne) \n" +
                 "addressTwo: ${addressTwo.value} \n" +
                 "city: ${city.value} ($validCity) \n" +
-                "state: ${state.value}\n" +
+                "state: ${state.value} ($validState)\n" +
                 "zipCode: ${zipCode.value} ($validZipCode) \n"
         )
     }
