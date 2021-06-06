@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application) : AndroidViewModel(application), Observable {
 
+    @Bindable
     private val _user = MutableLiveData<User>()
 
     val user: LiveData<User>
@@ -75,10 +76,31 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
     }
 
     fun submit() {
-        Log.d("SUBMIT", "submit: ${firstName.value}, ${lastName.value}, ${state.value}")
+
+        //Validate
+        val validFirstName: Boolean = !firstName.value.isNullOrBlank()
+        val validLastName: Boolean = !firstName.value.isNullOrBlank()
+        val validAddressOne: Boolean = !addressOne.value.isNullOrBlank()
+        val validCity: Boolean = !city.value.isNullOrBlank()
+
+        val validPhoneNumber: Boolean = "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$".toRegex().matches("${phoneNumber.value}")
+        val validZipCode: Boolean = "^\\d{5}(?:[-\\s]\\d{4})?\$".toRegex().matches("${zipCode.value}")
+
+        Log.d("SUBMIT", "submit: \n" +
+                "firstName: ${firstName.value} ($validFirstName)\n" +
+                "lastName: ${lastName.value} ($validLastName) \n" +
+                "phoneNumber: ${phoneNumber.value} ($validPhoneNumber) \n" +
+                "addressOne: ${addressOne.value} ($validAddressOne) \n" +
+                "addressTwo: ${addressTwo.value} \n" +
+                "city: ${city.value} ($validCity) \n" +
+                "state: ${state.value}\n" +
+                "zipCode: ${zipCode.value} ($validZipCode) \n"
+        )
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 }
+
+

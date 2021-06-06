@@ -17,7 +17,9 @@ public class BR {
 
   public static final int state = 7;
 
-  public static final int viewmodel = 8;
+  public static final int user = 8;
 
-  public static final int zipCode = 9;
+  public static final int viewmodel = 9;
+
+  public static final int zipCode = 10;
 }
