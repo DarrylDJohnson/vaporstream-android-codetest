@@ -2,7 +2,6 @@ package com.vaporstream.android_codetest.view.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -21,20 +20,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //ViewModel
+        /* ViewModel */
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        //Data Binding
+        /* Data Binding */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
 
-        //Set Spinner Adapter
-        val statesAdapter = ArrayAdapter.createFromResource(this, R.array.states_array, android.R.layout.simple_spinner_dropdown_item)
-        statesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerStates.adapter = statesAdapter
-
-        //Set button onClickListeners buttons
+        /* Button.onClickListeners */
         binding.buttonClear.setOnClickListener { viewModel.clear() }
         binding.buttonSubmit.setOnClickListener { viewModel.submit() }
     }

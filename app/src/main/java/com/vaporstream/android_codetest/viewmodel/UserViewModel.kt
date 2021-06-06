@@ -1,16 +1,19 @@
 package com.vaporstream.android_codetest.viewmodel
 
+import android.app.Application
 import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
+import androidx.databinding.ObservableArrayList
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.model.User
 import kotlinx.coroutines.launch
 
-class UserViewModel : ViewModel(), Observable {
+class UserViewModel(application: Application) : AndroidViewModel(application), Observable {
 
     private val _user = MutableLiveData<User>()
 
@@ -41,6 +44,9 @@ class UserViewModel : ViewModel(), Observable {
     @Bindable
     val zipCode = MutableLiveData<String>()
 
+    val statesArray = ObservableArrayList<String>()
+
+
     init {
         viewModelScope.launch {
             lastName.value = ""
@@ -51,7 +57,10 @@ class UserViewModel : ViewModel(), Observable {
             city.value = ""
             state.value = 0
             zipCode.value = ""
+
+            statesArray.addAll(application.resources.getStringArray(R.array.states_array))
         }
+
     }
 
     fun clear() {
@@ -66,7 +75,7 @@ class UserViewModel : ViewModel(), Observable {
     }
 
     fun submit() {
-        Log.d("SUBMIT", "submit: ${firstName.value}, ${lastName.value}")
+        Log.d("SUBMIT", "submit: ${firstName.value}, ${lastName.value}, ${state.value}")
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
