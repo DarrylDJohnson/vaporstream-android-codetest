@@ -13,7 +13,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.vaporstream.android_codetest.R;
-import com.vaporstream.android_codetest.viewmodel.UserViewModel;
+import com.vaporstream.android_codetest.viewmodel.MainActivityViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -49,7 +49,7 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final Spinner spinnerStates;
 
   @Bindable
-  protected UserViewModel mViewmodel;
+  protected MainActivityViewModel mViewmodel;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button buttonClear, Button buttonSubmit, EditText editTextAddressOne,
@@ -69,10 +69,10 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
     this.spinnerStates = spinnerStates;
   }
 
-  public abstract void setViewmodel(@Nullable UserViewModel viewmodel);
+  public abstract void setViewmodel(@Nullable MainActivityViewModel viewmodel);
 
   @Nullable
-  public UserViewModel getViewmodel() {
+  public MainActivityViewModel getViewmodel() {
     return mViewmodel;
   }
 

@@ -19,9 +19,7 @@ public class BR {
 
   public static final int submitEnabled = 8;
 
-  public static final int user = 9;
+  public static final int viewmodel = 9;
 
-  public static final int viewmodel = 10;
-
-  public static final int zipCode = 11;
+  public static final int zipCode = 10;
 }

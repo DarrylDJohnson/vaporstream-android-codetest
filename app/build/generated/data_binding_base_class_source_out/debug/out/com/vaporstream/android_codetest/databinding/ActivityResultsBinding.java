@@ -11,7 +11,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.vaporstream.android_codetest.R;
-import com.vaporstream.android_codetest.viewmodel.UserViewModel;
+import com.vaporstream.android_codetest.viewmodel.MainActivityViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -41,7 +41,7 @@ public abstract class ActivityResultsBinding extends ViewDataBinding {
   public final TextView textViewZipCode;
 
   @Bindable
-  protected UserViewModel mViewmodel;
+  protected MainActivityViewModel mViewmodel;
 
   protected ActivityResultsBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView textViewAddressOne, TextView textViewAddressTwo, TextView textViewCity,
@@ -58,10 +58,10 @@ public abstract class ActivityResultsBinding extends ViewDataBinding {
     this.textViewZipCode = textViewZipCode;
   }
 
-  public abstract void setViewmodel(@Nullable UserViewModel viewmodel);
+  public abstract void setViewmodel(@Nullable MainActivityViewModel viewmodel);
 
   @Nullable
-  public UserViewModel getViewmodel() {
+  public MainActivityViewModel getViewmodel() {
     return mViewmodel;
   }
 

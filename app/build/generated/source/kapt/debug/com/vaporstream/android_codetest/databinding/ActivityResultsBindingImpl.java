@@ -74,7 +74,7 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.viewmodel == variableId) {
-            setViewmodel((com.vaporstream.android_codetest.viewmodel.UserViewModel) variable);
+            setViewmodel((com.vaporstream.android_codetest.viewmodel.MainActivityViewModel) variable);
         }
         else {
             variableSet = false;
@@ -82,7 +82,7 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
             return variableSet;
     }
 
-    public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel) {
+    public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.MainActivityViewModel Viewmodel) {
         this.mViewmodel = Viewmodel;
     }
 
@@ -90,11 +90,11 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.UserViewModel) object, fieldId);
+                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.MainActivityViewModel) object, fieldId);
         }
         return false;
     }
-    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel, int fieldId) {
+    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.MainActivityViewModel Viewmodel, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;

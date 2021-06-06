@@ -1,15 +1,9 @@
 package com.vaporstream.android_codetest.view.results
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.vaporstream.android_codetest.R
-import com.vaporstream.android_codetest.viewmodel.UserViewModel
 
 class ResultsActivity : AppCompatActivity() {
 

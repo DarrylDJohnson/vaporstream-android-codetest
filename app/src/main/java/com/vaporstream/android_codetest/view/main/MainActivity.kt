@@ -8,11 +8,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
 import com.vaporstream.android_codetest.view.results.ResultsActivity
-import com.vaporstream.android_codetest.viewmodel.UserViewModel
+import com.vaporstream.android_codetest.viewmodel.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: UserViewModel
+    private lateinit var viewModel: MainActivityViewModel
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,15 +20,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /* ViewModel */
-        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         /* Data Binding */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
-
-        /* Button.onClickListeners */
-        binding.buttonClear.setOnClickListener { viewModel.clear() }
     }
 
     private fun submitForm() {

@@ -5,18 +5,14 @@ import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableArrayList
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.vaporstream.android_codetest.R
-import com.vaporstream.android_codetest.model.User
 import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application) : AndroidViewModel(application), Observable {
-
-    @Bindable
-    private val _user = MutableLiveData<User>()
-
-    val user: LiveData<User>
-        get() = _user
+class MainActivityViewModel(application: Application) : AndroidViewModel(application), Observable {
 
     @Bindable
     val firstName = MutableLiveData<String>()
@@ -49,14 +45,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
 
     init {
         viewModelScope.launch {
-            lastName.value = ""
-            firstName.value = ""
-            phoneNumber.value = ""
-            addressOne.value = ""
-            addressTwo.value = ""
-            city.value = ""
-            state.value = 0
-            zipCode.value = ""
+            clear()
 
             submitEnabled.addSources(firstName, lastName, phoneNumber, addressOne, city, state, zipCode) {
                 submitEnabled.value = validate(firstName, lastName, phoneNumber, addressOne, city, state, zipCode)
@@ -94,7 +83,6 @@ class UserViewModel(application: Application) : AndroidViewModel(application), O
         state.value = 0
         zipCode.value = ""
     }
-
 
     fun submit() {
         Log.d(TAG, "submit: click")
