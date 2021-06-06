@@ -1,0 +1,4 @@
+com/vaporstream/android_codetest/ExampleInstrumentedTest.java
+ com.vaporstream.android_codetest.ExampleInstrumentedTest
+com/vaporstream/android_codetest/test/BuildConfig.java
+ com.vaporstream.android_codetest.test.BuildConfig

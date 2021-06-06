@@ -8,31 +8,31 @@ import androidx.room.PrimaryKey
 data class User(
 
         @PrimaryKey(autoGenerate = true)
-        val uid: Long,
+        var uid: Long = 0L,
 
         @ColumnInfo(name = FIRST_NAME)
-        val firstName: String,
+        var firstName: String,
 
         @ColumnInfo(name = LAST_NAME)
-        val lastName: String,
+        var lastName: String,
 
         @ColumnInfo(name = PHONE_NUMBER)
         var phoneNumber: String,
 
         @ColumnInfo(name = ADDRESS_ONE)
-        val addressOne: String,
+        var addressOne: String,
 
         @ColumnInfo(name = ADDRESS_TWO)
-        var addressTwo: String,
+        var addressTwo: String?,
 
         @ColumnInfo(name = CITY)
-        val city: String,
+        var city: String,
 
         @ColumnInfo(name = STATE)
-        val state: String,
+        var state: String,
 
         @ColumnInfo(name = ZIPCODE)
-        val zipCode: String,
+        var zipCode: String,
 ) {
     companion object {
         private const val FIRST_NAME = "first_name"
