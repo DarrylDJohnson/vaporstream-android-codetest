@@ -1,42 +1,39 @@
 package com.vaporstream.android_codetest.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableArrayList
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.vaporstream.android_codetest.R
+import com.vaporstream.android_codetest.services.RoomUserService
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application), Observable {
 
     @Bindable
-    val firstName = MutableLiveData<String>()
+    val firstName = MutableLiveData("")
 
     @Bindable
-    val lastName = MutableLiveData<String>()
+    val lastName = MutableLiveData("")
 
     @Bindable
-    val phoneNumber = MutableLiveData<String>()
+    val phoneNumber = MutableLiveData("")
 
     @Bindable
-    val addressOne = MutableLiveData<String>()
+    val addressOne = MutableLiveData("")
 
     @Bindable
-    val addressTwo = MutableLiveData<String>()
+    val addressTwo = MutableLiveData("")
 
     @Bindable
-    val city = MutableLiveData<String>()
+    val city = MutableLiveData("")
 
     @Bindable
-    val state = MutableLiveData<Int>()
+    val state = MutableLiveData(0)
 
     @Bindable
-    val zipCode = MutableLiveData<String>()
+    val zipCode = MutableLiveData("")
 
     val statesArray = ObservableArrayList<String>()
 
@@ -45,8 +42,6 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
 
     init {
         viewModelScope.launch {
-            clear()
-
             submitEnabled.addSources(firstName, lastName, phoneNumber, addressOne, city, state, zipCode) {
                 submitEnabled.value = validate(firstName, lastName, phoneNumber, addressOne, city, state, zipCode)
             }
@@ -56,19 +51,19 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     }
 
     private fun validate(
-            firstName: MutableLiveData<String>,
-            lastName: MutableLiveData<String>,
-            phoneNumber: MutableLiveData<String>,
-            addressOne: MutableLiveData<String>,
-            city: MutableLiveData<String>,
-            state: MutableLiveData<Int>,
-            zipCode: MutableLiveData<String>
+            firstName: LiveData<String>,
+            lastName: LiveData<String>,
+            phoneNumber: LiveData<String>,
+            addressOne: LiveData<String>,
+            city: LiveData<String>,
+            state: LiveData<Int>,
+            zipCode: LiveData<String>
     ): Boolean {
-        return !firstName.value.isNullOrBlank() &&
-                !lastName.value.isNullOrBlank() &&
+        return firstName.value.isNotNullOrBlank() &&
+                lastName.value.isNotNullOrBlank() &&
                 PHONE_REGEX.toRegex().matches("${phoneNumber.value}") &&
-                !addressOne.value.isNullOrBlank() &&
-                !city.value.isNullOrBlank() &&
+                addressOne.value.isNotNullOrBlank() &&
+                city.value.isNotNullOrBlank() &&
                 state.value != 0 &&
                 ZIP_CODE_REGEX.toRegex().matches("${zipCode.value}")
     }
@@ -85,7 +80,18 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     }
 
     fun submit() {
-        Log.d(TAG, "submit: click")
+        viewModelScope.launch {
+            RoomUserService.setUser(
+                    firstName.value!!,
+                    lastName.value!!,
+                    phoneNumber.value!!,
+                    addressOne.value!!,
+                    addressTwo.value!!,
+                    city.value!!,
+                    state.value!!,
+                    zipCode.value!!,
+            )
+        }
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
@@ -99,7 +105,14 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     }
 }
 
-private fun <T> MediatorLiveData<T>.addSources(vararg sources: MutableLiveData<out Any>, onChanged: (Any) -> Unit) {
+/**
+ * Extension for MediatorLiveData to reduce redundant code
+ */
+private fun <T> MediatorLiveData<T>.addSources(vararg sources: LiveData<out Any>, onChanged: (Any) -> Unit) {
     sources.forEach { this.addSource(it, onChanged) }
 }
 
+/**
+ * Extension for String to improve readability
+ */
+private fun String?.isNotNullOrBlank() = !this.isNullOrBlank()
