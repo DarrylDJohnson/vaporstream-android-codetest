@@ -14,16 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7a0da12-a78b-43c1-8792-85f2d18b7968" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Android_Code_Test.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Android_Code_Test.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vaporstream/android_codetest/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vaporstream/android_codetest/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vaporstream/android_codetest/services/RoomUserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vaporstream/android_codetest/services/RoomUserService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,22 +197,22 @@
       <screen x="0" y="0" width="1536" height="920" />
     </state>
     <state x="512" y="337" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.920@0.0.1536.920" timestamp="1622910669738" />
-    <state width="1493" height="250" key="GridCell.Tab.0.bottom" timestamp="1622968015496">
+    <state width="723" height="250" key="GridCell.Tab.0.bottom" timestamp="1622968817359">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="250" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1622968015496" />
-    <state width="1493" height="250" key="GridCell.Tab.0.center" timestamp="1622968015496">
+    <state width="723" height="250" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1622968817359" />
+    <state width="723" height="250" key="GridCell.Tab.0.center" timestamp="1622968817359">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="250" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1622968015496" />
-    <state width="1493" height="250" key="GridCell.Tab.0.left" timestamp="1622968015496">
+    <state width="723" height="250" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1622968817359" />
+    <state width="723" height="250" key="GridCell.Tab.0.left" timestamp="1622968817359">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="250" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1622968015496" />
-    <state width="1493" height="250" key="GridCell.Tab.0.right" timestamp="1622968015496">
+    <state width="723" height="250" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1622968817359" />
+    <state width="723" height="250" key="GridCell.Tab.0.right" timestamp="1622968817359">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="250" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1622968015496" />
+    <state width="723" height="250" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1622968817359" />
     <state x="277" y="103" key="SettingsEditor" timestamp="1622908622196">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
