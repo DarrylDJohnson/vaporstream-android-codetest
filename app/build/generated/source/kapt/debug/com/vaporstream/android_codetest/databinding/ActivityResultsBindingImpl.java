@@ -35,7 +35,7 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ActivityResultsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0
+        super(bindingComponent, root, 1
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[6]
@@ -73,8 +73,8 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.user == variableId) {
-            setUser((com.vaporstream.android_codetest.model.User) variable);
+        if (BR.viewmodel == variableId) {
+            setViewmodel((com.vaporstream.android_codetest.viewmodel.UserViewModel) variable);
         }
         else {
             variableSet = false;
@@ -82,13 +82,24 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
             return variableSet;
     }
 
-    public void setUser(@Nullable com.vaporstream.android_codetest.model.User User) {
-        this.mUser = User;
+    public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel) {
+        this.mViewmodel = Viewmodel;
     }
 
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
+            case 0 :
+                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.UserViewModel) object, fieldId);
+        }
+        return false;
+    }
+    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.UserViewModel Viewmodel, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
         }
         return false;
     }
@@ -107,7 +118,7 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): user
+        flag 0 (0x1L): viewmodel
         flag 1 (0x2L): null
     flag mapping end*/
     //end

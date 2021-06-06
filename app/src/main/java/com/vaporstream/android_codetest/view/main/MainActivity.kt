@@ -2,68 +2,45 @@ package com.vaporstream.android_codetest.view.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.vaporstream.android_codetest.R
+import com.vaporstream.android_codetest.databinding.ActivityMainBinding
 import com.vaporstream.android_codetest.view.results.ResultsActivity
+import com.vaporstream.android_codetest.viewmodel.UserViewModel
 
 class MainActivity : AppCompatActivity() {
-    private var firstNameEditText: EditText? = null
-    private var lastNameEditText: EditText? = null
-    private var phoneNumberEditText: EditText? = null
-    private var addressOneEditText: EditText? = null
-    private var addressTwoEditText: EditText? = null
-    private var cityEditText: EditText? = null
-    private var spinnerStates: Spinner? = null
-    private var zipCodeEditText: EditText? = null
-    private var clearButton: Button? = null
-    private var submitButton: Button? = null
+
+    private lateinit var viewModel: UserViewModel
+    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        firstNameEditText = findViewById(R.id.edit_text_first_name)
-        lastNameEditText = findViewById(R.id.edit_text_last_name)
-        phoneNumberEditText = findViewById(R.id.edit_text_phone_number)
-        addressOneEditText = findViewById(R.id.edit_text_address_one)
-        addressTwoEditText = findViewById(R.id.edit_text_address_two)
-        cityEditText = findViewById(R.id.edit_text_city)
-        spinnerStates = findViewById(R.id.spinner_states)
-        zipCodeEditText = findViewById(R.id.edit_text_zipcode)
-        clearButton = findViewById(R.id.button_clear)
-        submitButton = findViewById(R.id.button_submit)
+
+        //ViewModel
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+        //Data Binding
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.lifecycleOwner = this
+        binding.viewmodel = viewModel
+
+        //Set Spinner Adapter
         val statesAdapter = ArrayAdapter.createFromResource(this, R.array.states_array, android.R.layout.simple_spinner_dropdown_item)
         statesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerStates?.adapter = statesAdapter
-        clearButton?.setOnClickListener(View.OnClickListener { clearForm() })
-        submitButton?.setOnClickListener(View.OnClickListener { submitForm() })
-    }
+        binding.spinnerStates.adapter = statesAdapter
 
-    private fun clearForm() {
-        firstNameEditText!!.setText("")
-        lastNameEditText!!.setText("")
-        phoneNumberEditText!!.setText("")
-        addressOneEditText!!.setText("")
-        addressTwoEditText!!.setText("")
-        cityEditText!!.setText("")
-        spinnerStates!!.setSelection(0)
-        zipCodeEditText!!.setText("")
+        //Set button onClickListeners buttons
+        binding.buttonClear.setOnClickListener { viewModel.clear() }
+        binding.buttonSubmit.setOnClickListener { viewModel.submit() }
     }
 
     private fun submitForm() {
         val resultsIntent = Intent(this, ResultsActivity::class.java)
-        resultsIntent.putExtra(ResultsActivity.FIRST_NAME, firstNameEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.LAST_NAME, lastNameEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.PHONE_NUMBER, phoneNumberEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.ADDRESS_ONE, addressOneEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.ADDRESS_TWO, addressTwoEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.CITY, cityEditText!!.text.toString())
-        resultsIntent.putExtra(ResultsActivity.STATE, spinnerStates!!.selectedItem.toString())
-        resultsIntent.putExtra(ResultsActivity.ZIPCODE, zipCodeEditText!!.text.toString())
         startActivity(resultsIntent)
     }
 }
