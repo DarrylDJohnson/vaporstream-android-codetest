@@ -1,14 +1,38 @@
 package com.vaporstream.android_codetest.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "user_table")
 data class User(
-        val firstName: String,      //required
-        val lastName: String,       //required
-        var phoneNumber: String?,
-        val addressOne: String,     //required
-        var addressTwo: String?,
-        val city: String,           //required
-        val state: String,          //required
-        val zipCode: String,        //required
+
+        @PrimaryKey(autoGenerate = true)
+        val id: String,
+
+        @ColumnInfo(name = FIRST_NAME)
+        val firstName: String,
+
+        @ColumnInfo(name = LAST_NAME)
+        val lastName: String,
+
+        @ColumnInfo(name = PHONE_NUMBER)
+        var phoneNumber: String,
+
+        @ColumnInfo(name = ADDRESS_ONE)
+        val addressOne: String,
+
+        @ColumnInfo(name = ADDRESS_TWO)
+        var addressTwo: String,
+
+        @ColumnInfo(name = CITY)
+        val city: String,
+
+        @ColumnInfo(name = STATE)
+        val state: String,
+
+        @ColumnInfo(name = ZIPCODE)
+        val zipCode: String,
 ) {
     companion object {
         private const val FIRST_NAME = "first_name"

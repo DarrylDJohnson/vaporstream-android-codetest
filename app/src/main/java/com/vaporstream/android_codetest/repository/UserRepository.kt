@@ -11,16 +11,6 @@ object UserRepository {
         get() = _user
 
     init {
-        _user.value = User(
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-        )
     }
 
     fun submit(){
