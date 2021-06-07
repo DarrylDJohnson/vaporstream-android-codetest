@@ -10,61 +10,65 @@
 9        android:targetSdkVersion="30" />
 9-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:7:5-25:19
-12        android:allowBackup="true"
-12-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:8:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:9:9-43
-16        android:label="@string/app_name"
-16-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:10:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:11:9-54
-18        android:supportsRtl="true"
-18-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:12:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme" >
-20-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:13:9-40
-21        <activity android:name="com.vaporstream.android_codetest.view.main.MainActivity" >
-21-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:16:9-21:20
-21-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:16:19-89
-22            <intent-filter>
-22-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:17:13-20:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:18:17-69
-23-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:18:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:19:17-77
-25-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:19:27-74
-26            </intent-filter>
-27        </activity>
-28        <activity android:name="com.vaporstream.android_codetest.view.results.ResultsActivity" />
-28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:9-98
-28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:19-95
-29
-30        <provider
-30-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-31            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-31-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-32            android:authorities="com.vaporstream.android_codetest.lifecycle-process"
-32-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-33            android:exported="false"
-33-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-34            android:multiprocess="true" />
-34-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-35
-36        <service
-36-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
-37            android:name="androidx.room.MultiInstanceInvalidationService"
-37-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
-38            android:directBootAware="true"
-38-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
-39            android:exported="false" />
-39-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
-40    </application>
-41
-42</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:7:5-67
+11-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:7:22-64
+12
+13    <application
+13-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:9:5-27:19
+14        android:allowBackup="true"
+14-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:10:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:11:9-43
+18        android:label="@string/app_name"
+18-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:12:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:13:9-54
+20        android:supportsRtl="true"
+20-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:14:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:15:9-40
+23        <activity android:name="com.vaporstream.android_codetest.view.main.MainActivity" >
+23-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:18:9-23:20
+23-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:18:19-89
+24            <intent-filter>
+24-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:19:13-22:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:20:17-69
+25-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:20:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:21:17-77
+27-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:21:27-74
+28            </intent-filter>
+29        </activity>
+30        <activity android:name="com.vaporstream.android_codetest.view.results.ResultsActivity" />
+30-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:25:9-98
+30-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:25:19-95
+31
+32        <provider
+32-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+33            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+33-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+34            android:authorities="com.vaporstream.android_codetest.lifecycle-process"
+34-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+35            android:exported="false"
+35-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+36            android:multiprocess="true" />
+36-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+37
+38        <service
+38-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
+39            android:name="androidx.room.MultiInstanceInvalidationService"
+39-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
+40            android:directBootAware="true"
+40-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
+41            android:exported="false" />
+41-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
+42    </application>
+43
+44</manifest>

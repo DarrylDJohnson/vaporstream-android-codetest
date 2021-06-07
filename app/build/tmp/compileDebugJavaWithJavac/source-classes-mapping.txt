@@ -26,10 +26,12 @@ com/vaporstream/android_codetest/database/user/UserDatabaseDao_Impl.java
  com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$2
  com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$3
  com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$4
-com/vaporstream/android_codetest/databinding/ActivityMainBinding.java
- com.vaporstream.android_codetest.databinding.ActivityMainBinding
+com/vaporstream/android_codetest/databinding/ActivityResultsBinding.java
+ com.vaporstream.android_codetest.databinding.ActivityResultsBinding
 com/vaporstream/android_codetest/databinding/ActivityResultsBindingImpl.java
  com.vaporstream.android_codetest.databinding.ActivityResultsBindingImpl
+com/vaporstream/android_codetest/databinding/ActivityMainBinding.java
+ com.vaporstream.android_codetest.databinding.ActivityMainBinding
 com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java
  com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl
  com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$1
@@ -40,5 +42,3 @@ com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java
  com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$6
  com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$7
  com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$8
-com/vaporstream/android_codetest/databinding/ActivityResultsBinding.java
- com.vaporstream.android_codetest.databinding.ActivityResultsBinding
