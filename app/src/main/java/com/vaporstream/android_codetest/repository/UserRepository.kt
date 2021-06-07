@@ -1,6 +1,5 @@
 package com.vaporstream.android_codetest.repository
 
-import androidx.lifecycle.LiveData
 import com.vaporstream.android_codetest.model.User
 
 interface UserRepository {

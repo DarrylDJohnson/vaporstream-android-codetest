@@ -7,29 +7,21 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.vaporstream.android_codetest.R
-import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
-import com.vaporstream.android_codetest.repository.UserRepository
-import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.view.results.ResultsActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel
-import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
-    private lateinit var userRepository: UserRepository
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        userRepository = UserRepositoryImpl(UserDatabase.getInstance(this).userDatabaseDao)
-
         /* ViewModel */
-        val factory = MainActivityViewModelFactory(userRepository)
-        viewModel = ViewModelProvider(this, factory).get(MainActivityViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         /* Data Binding */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
