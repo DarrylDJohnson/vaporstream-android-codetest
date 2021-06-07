@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
-import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.view.results.ResultsActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel
 

@@ -8,7 +8,6 @@ import androidx.lifecycle.*
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.repository.UserRepository
-import com.vaporstream.android_codetest.utilities.StatesInterface
 import com.vaporstream.android_codetest.utilities.*
 import kotlinx.coroutines.launch
 import retrofit2.Call
