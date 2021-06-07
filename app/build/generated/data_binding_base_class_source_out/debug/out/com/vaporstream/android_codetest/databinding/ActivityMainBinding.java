@@ -13,7 +13,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.vaporstream.android_codetest.R;
-import com.vaporstream.android_codetest.viewmodel.MainActivityViewModel;
+import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 

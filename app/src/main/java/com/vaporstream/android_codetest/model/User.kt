@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_table")
 data class User(
-
         @PrimaryKey(autoGenerate = true)
-        var uid: Long = 0L,
+        val uid: Long?,
 
         @ColumnInfo(name = FIRST_NAME)
         var firstName: String,
@@ -34,6 +33,16 @@ data class User(
         @ColumnInfo(name = ZIPCODE)
         var zipCode: String,
 ) {
+    constructor(
+            firstName: String,
+            lastName: String,
+            phoneNumber: String,
+            addressOne: String,
+            addressTwo: String?,
+            city: String,
+            state: String,
+            zipCode: String,
+    ) : this(null, firstName, lastName, phoneNumber, addressOne, addressTwo, city, state, zipCode)
     companion object {
         private const val FIRST_NAME = "first_name"
         private const val LAST_NAME = "last_name"

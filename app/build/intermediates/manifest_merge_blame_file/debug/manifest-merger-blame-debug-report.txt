@@ -46,25 +46,25 @@
 28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:9-98
 28-->C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:23:19-95
 29
-30        <service
-30-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
-31            android:name="androidx.room.MultiInstanceInvalidationService"
-31-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
-32            android:directBootAware="true"
-32-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
-33            android:exported="false" />
-33-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
-34
-35        <provider
-35-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-36            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-36-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-37            android:authorities="com.vaporstream.android_codetest.lifecycle-process"
-37-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-38            android:exported="false"
-38-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-39            android:multiprocess="true" />
-39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+30        <provider
+30-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+31            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+31-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+32            android:authorities="com.vaporstream.android_codetest.lifecycle-process"
+32-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+33            android:exported="false"
+33-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+34            android:multiprocess="true" />
+34-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+35
+36        <service
+36-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
+37            android:name="androidx.room.MultiInstanceInvalidationService"
+37-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
+38            android:directBootAware="true"
+38-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
+39            android:exported="false" />
+39-->[androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
 40    </application>
 41
 42</manifest>

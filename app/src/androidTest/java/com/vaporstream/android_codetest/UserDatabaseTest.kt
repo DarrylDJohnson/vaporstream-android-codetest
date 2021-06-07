@@ -1,5 +1,6 @@
 package com.vaporstream.android_codetest
 
+import androidx.lifecycle.asLiveData
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -7,6 +8,8 @@ import com.vaporstream.android_codetest.database.user.UserDatabase
 import com.vaporstream.android_codetest.database.user.UserDatabaseDao
 import com.vaporstream.android_codetest.model.User
 import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -51,9 +54,13 @@ class UserDatabaseTest {
                 zipCode = "123456",
         )
 
-        userDao.insert(user)
-
-        val currentUser = userDao.get(123L)
-        assertEquals(currentUser?.firstName, "First")
+        runBlocking {
+            launch {
+                userDao.insert(user)
+            }
+        }.invokeOnCompletion {
+            val currentUser = userDao.get(123L).asLiveData()
+            assertEquals(currentUser.value?.firstName, "First")
+        }
     }
 }

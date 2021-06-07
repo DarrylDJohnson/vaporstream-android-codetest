@@ -20,8 +20,6 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
-    @Nullable
     private final android.view.View.OnClickListener mCallback1;
     // values
     // listeners
@@ -42,7 +40,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.addressOne.getValue()
             java.lang.String viewmodelAddressOneGetValue = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -79,7 +77,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.addressTwo
             androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressTwo = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -114,7 +112,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.city
             androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelCity = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
             // viewmodel.city.getValue()
             java.lang.String viewmodelCityGetValue = null;
 
@@ -153,7 +151,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.firstName
             androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelFirstName = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -190,7 +188,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel != null
             boolean viewmodelJavaLangObjectNull = false;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -227,7 +225,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.phoneNumber
             androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelPhoneNumber = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -264,7 +262,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.zipCode
             androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelZipCode = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -301,7 +299,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             // viewmodel.state.getValue()
             java.lang.Integer viewmodelStateGetValue = null;
             // viewmodel
-            com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+            com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
@@ -353,7 +351,6 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         this.spinnerStates.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback2 = new com.vaporstream.android_codetest.generated.callback.OnClickListener(this, 2);
         mCallback1 = new com.vaporstream.android_codetest.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
@@ -380,7 +377,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.viewmodel == variableId) {
-            setViewmodel((com.vaporstream.android_codetest.viewmodel.MainActivityViewModel) variable);
+            setViewmodel((com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel) variable);
         }
         else {
             variableSet = false;
@@ -388,7 +385,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             return variableSet;
     }
 
-    public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.MainActivityViewModel Viewmodel) {
+    public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel Viewmodel) {
         updateRegistration(10, Viewmodel);
         this.mViewmodel = Viewmodel;
         synchronized(this) {
@@ -422,7 +419,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             case 9 :
                 return onChangeViewmodelFirstName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
             case 10 :
-                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.MainActivityViewModel) object, fieldId);
+                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel) object, fieldId);
         }
         return false;
     }
@@ -516,7 +513,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.MainActivityViewModel Viewmodel, int fieldId) {
+    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel Viewmodel, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x400L;
@@ -608,7 +605,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         java.lang.Integer viewmodelStateGetValue = null;
         java.lang.String viewmodelLastNameGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelFirstName = null;
-        com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+        com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
         if ((dirtyFlags & 0xfffL) != 0) {
 
@@ -760,8 +757,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         if ((dirtyFlags & 0x800L) != 0) {
             // api target 1
 
-            this.buttonClear.setOnClickListener(mCallback2);
-            this.buttonSubmit.setOnClickListener(mCallback1);
+            this.buttonClear.setOnClickListener(mCallback1);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressOne, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressOneandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressTwo, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressTwoandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextCity, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextCityandroidTextAttrChanged);
@@ -825,41 +821,19 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
-        switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // viewmodel != null
-                boolean viewmodelJavaLangObjectNull = false;
-                // viewmodel
-                com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
+        // localize variables for thread safety
+        // viewmodel != null
+        boolean viewmodelJavaLangObjectNull = false;
+        // viewmodel
+        com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
-                viewmodelJavaLangObjectNull = (viewmodel) != (null);
-                if (viewmodelJavaLangObjectNull) {
+        viewmodelJavaLangObjectNull = (viewmodel) != (null);
+        if (viewmodelJavaLangObjectNull) {
 
 
-                    viewmodel.clear();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // viewmodel != null
-                boolean viewmodelJavaLangObjectNull = false;
-                // viewmodel
-                com.vaporstream.android_codetest.viewmodel.MainActivityViewModel viewmodel = mViewmodel;
-
-
-
-                viewmodelJavaLangObjectNull = (viewmodel) != (null);
-                if (viewmodelJavaLangObjectNull) {
-
-
-                    viewmodel.submit();
-                }
-                break;
-            }
+            viewmodel.clear();
         }
     }
     // dirty flag
