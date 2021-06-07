@@ -16,7 +16,6 @@ class UserViewModel(userRepository: UserRepository, uid: Long) : ViewModel(), Ob
     val user: LiveData<User>
         get() = _user
 
-
     init {
         viewModelScope.launch {
             _user.postValue(userRepository.getUser(uid))
