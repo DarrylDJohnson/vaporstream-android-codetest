@@ -1,6 +1,5 @@
 package com.vaporstream.android_codetest.viewmodel.main
 
-import android.app.Application
 import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
@@ -8,17 +7,16 @@ import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.*
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.repository.UserRepository
-import com.vaporstream.android_codetest.services.StatesService
 import com.vaporstream.android_codetest.services.JsonBinEndpoints
+import com.vaporstream.android_codetest.services.StatesService
 import com.vaporstream.android_codetest.utilities.*
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivityViewModel(application: Application) : AndroidViewModel(application), Observable {
+class MainActivityViewModel(private val userRepository: UserRepository) : ViewModel(), Observable {
 
-    private val _repository = UserRepository(application, null)
 
     @Bindable
     val firstName = MutableLiveData("")
@@ -56,7 +54,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
         call.enqueue(object : Callback<List<String>> {
             override fun onResponse(call: Call<List<String>>?, response: Response<List<String>>) {
                 states.add("Select a State")
-                
+
                 if (response.isSuccessful) {
                     states.addAll(response.body())
                 }
@@ -116,7 +114,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
                 zipCode.value!!,
         )
 
-        _repository.insert(user, onComplete)
+        onComplete(userRepository.insertUser(user))
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}

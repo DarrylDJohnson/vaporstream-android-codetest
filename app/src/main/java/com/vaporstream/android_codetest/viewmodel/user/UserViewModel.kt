@@ -1,18 +1,27 @@
 package com.vaporstream.android_codetest.viewmodel.user
 
-import android.app.Application
 import androidx.databinding.Observable
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.repository.UserRepository
+import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application, uid: Long) : AndroidViewModel(application), Observable {
+class UserViewModel(userRepository: UserRepository, uid: Long) : ViewModel(), Observable {
 
-    private val repository = UserRepository(application, uid)
+    private val _user = MutableLiveData<User>()
 
     val user: LiveData<User>
-        get() = repository.user
+        get() = _user
+
+
+    init {
+        viewModelScope.launch {
+            _user.postValue(userRepository.getUser(uid))
+        }
+    }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 

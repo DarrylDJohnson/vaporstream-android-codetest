@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.vaporstream.android_codetest.R
+import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.databinding.ActivityResultsBinding
+import com.vaporstream.android_codetest.repository.UserRepository
+import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.viewmodel.user.UserViewModel
 import com.vaporstream.android_codetest.viewmodel.user.UserViewModelFactory
 
 class ResultsActivity : AppCompatActivity() {
 
     private lateinit var viewModel: UserViewModel
+    private lateinit var repository: UserRepository
     private lateinit var binding: ActivityResultsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +25,8 @@ class ResultsActivity : AppCompatActivity() {
         val extras = intent.extras
         val uid = extras!!.getLong("uid")
 
-        val factory = UserViewModelFactory(application, uid)
+        val repository = UserRepositoryImpl(UserDatabase.getInstance(this).userDatabaseDao)
+        val factory = UserViewModelFactory(repository, uid)
         viewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)
 
         /* Data Binding*/

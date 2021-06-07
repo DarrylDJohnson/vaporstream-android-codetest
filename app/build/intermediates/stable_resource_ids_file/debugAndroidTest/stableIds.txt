@@ -1,3 +1,0 @@
-com.vaporstream.android_codetest.test:style/InstrumentationActivityInvokerEmptyActivityTheme = 0x7f010001
-com.vaporstream.android_codetest.test:style/InstrumentationActivityInvokerFloatingActivityTheme = 0x7f010002
-com.vaporstream.android_codetest.test:style/InstrumentationActivityInvokerBootstrapActivityTheme = 0x7f010000

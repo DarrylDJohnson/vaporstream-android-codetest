@@ -2,30 +2,34 @@ package com.vaporstream.android_codetest.view.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.vaporstream.android_codetest.R
+import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
+import com.vaporstream.android_codetest.repository.UserRepository
+import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.view.results.ResultsActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel
+import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
+    private lateinit var userRepository: UserRepository
     private lateinit var binding: ActivityMainBinding
-
-    private var spinnerSelectionStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        userRepository = UserRepositoryImpl(UserDatabase.getInstance(this).userDatabaseDao)
+
         /* ViewModel */
-        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        val factory = MainActivityViewModelFactory(userRepository)
+        viewModel = ViewModelProvider(this, factory).get(MainActivityViewModel::class.java)
 
         /* Data Binding */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
