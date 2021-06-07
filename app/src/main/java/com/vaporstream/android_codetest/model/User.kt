@@ -43,6 +43,7 @@ data class User(
             state: String,
             zipCode: String,
     ) : this(null, firstName, lastName, phoneNumber, addressOne, addressTwo, city, state, zipCode)
+
     companion object {
         private const val FIRST_NAME = "first_name"
         private const val LAST_NAME = "last_name"

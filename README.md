@@ -15,7 +15,7 @@ Refactor a basic form that submits input to a `ResultsActivity` which then displ
 * Setup an architecture framework such as MVVM                                                      DONE
 * Add input validation to the `MainActivity` view model (see validation requirements below).        DONE
 * Enable the Submit button only when all of the input validations pass.                             DONE
-* Use `Retrofit2` to pull down the list of US States from [here](https://api.jsonbin.io/b/60770a3c5b165e19f6201b95) and populate the `Spinner` instead of using the provided `states-array`.
+* Use `Retrofit2` to pull down the list of US States from [here](https://api.jsonbin.io/b/60770a3c5b165e19f6201b95) and populate the `Spinner` instead of using the provided `states-array`. DONE
 
 ## validation requirements
 

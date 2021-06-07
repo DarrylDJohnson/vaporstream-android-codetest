@@ -9,27 +9,27 @@ androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/vaporstream/android_codetest/DataBindingTriggerClass.java
  com.vaporstream.android_codetest.DataBindingTriggerClass
+com/vaporstream/android_codetest/BuildConfig.java
+ com.vaporstream.android_codetest.BuildConfig
+com/vaporstream/android_codetest/BR.java
+ com.vaporstream.android_codetest.BR
 com/vaporstream/android_codetest/DataBinderMapperImpl.java
  com.vaporstream.android_codetest.DataBinderMapperImpl
  com.vaporstream.android_codetest.DataBinderMapperImpl$InnerBrLookup
  com.vaporstream.android_codetest.DataBinderMapperImpl$InnerLayoutIdLookup
-com/vaporstream/android_codetest/BR.java
- com.vaporstream.android_codetest.BR
-com/vaporstream/android_codetest/BuildConfig.java
- com.vaporstream.android_codetest.BuildConfig
-com/vaporstream/android_codetest/database/user/UserDatabase_Impl.java
- com.vaporstream.android_codetest.database.user.UserDatabase_Impl
- com.vaporstream.android_codetest.database.user.UserDatabase_Impl$1
-com/vaporstream/android_codetest/database/user/UserDatabaseDao_Impl.java
- com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl
- com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$1
- com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$2
- com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$3
- com.vaporstream.android_codetest.database.user.UserDatabaseDao_Impl$4
 com/vaporstream/android_codetest/databinding/ActivityResultsBinding.java
  com.vaporstream.android_codetest.databinding.ActivityResultsBinding
 com/vaporstream/android_codetest/databinding/ActivityResultsBindingImpl.java
  com.vaporstream.android_codetest.databinding.ActivityResultsBindingImpl
+com/vaporstream/android_codetest/database/UserDatabaseDao_Impl.java
+ com.vaporstream.android_codetest.database.UserDatabaseDao_Impl
+ com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$1
+ com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$2
+ com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$3
+ com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$4
+com/vaporstream/android_codetest/database/UserDatabase_Impl.java
+ com.vaporstream.android_codetest.database.UserDatabase_Impl
+ com.vaporstream.android_codetest.database.UserDatabase_Impl$1
 com/vaporstream/android_codetest/databinding/ActivityMainBinding.java
  com.vaporstream.android_codetest.databinding.ActivityMainBinding
 com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java

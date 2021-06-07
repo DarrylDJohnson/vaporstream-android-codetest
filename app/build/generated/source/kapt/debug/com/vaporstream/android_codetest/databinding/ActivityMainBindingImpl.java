@@ -399,11 +399,11 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeViewmodelStatesArray((androidx.databinding.ObservableArrayList<java.lang.String>) object, fieldId);
-            case 1 :
                 return onChangeViewmodelLastName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
-            case 2 :
+            case 1 :
                 return onChangeViewmodelCity((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+            case 2 :
+                return onChangeViewmodelStates((androidx.databinding.ObservableArrayList<java.lang.String>) object, fieldId);
             case 3 :
                 return onChangeViewmodelState((androidx.lifecycle.MutableLiveData<java.lang.Integer>) object, fieldId);
             case 4 :
@@ -423,7 +423,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelStatesArray(androidx.databinding.ObservableArrayList<java.lang.String> ViewmodelStatesArray, int fieldId) {
+    private boolean onChangeViewmodelLastName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelLastName, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
@@ -432,7 +432,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelLastName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelLastName, int fieldId) {
+    private boolean onChangeViewmodelCity(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelCity, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x2L;
@@ -441,7 +441,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelCity(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelCity, int fieldId) {
+    private boolean onChangeViewmodelStates(androidx.databinding.ObservableArrayList<java.lang.String> ViewmodelStates, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x4L;
@@ -528,7 +528,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         else if (fieldId == BR.lastName) {
             synchronized(this) {
-                    mDirtyFlags |= 0x2L;
+                    mDirtyFlags |= 0x1L;
             }
             return true;
         }
@@ -552,7 +552,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         else if (fieldId == BR.city) {
             synchronized(this) {
-                    mDirtyFlags |= 0x4L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
@@ -585,11 +585,11 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             mDirtyFlags = 0;
         }
         int androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue = 0;
-        androidx.databinding.ObservableArrayList<java.lang.String> viewmodelStatesArray = null;
         java.lang.String viewmodelFirstNameGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelLastName = null;
         java.lang.String viewmodelZipCodeGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelCity = null;
+        androidx.databinding.ObservableArrayList<java.lang.String> viewmodelStates = null;
         java.lang.String viewmodelAddressOneGetValue = null;
         java.lang.String viewmodelCityGetValue = null;
         java.lang.String viewmodelPhoneNumberGetValue = null;
@@ -613,18 +613,10 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             if ((dirtyFlags & 0xc01L) != 0) {
 
                     if (viewmodel != null) {
-                        // read viewmodel.statesArray
-                        viewmodelStatesArray = viewmodel.getStatesArray();
-                    }
-                    updateRegistration(0, viewmodelStatesArray);
-            }
-            if ((dirtyFlags & 0xc02L) != 0) {
-
-                    if (viewmodel != null) {
                         // read viewmodel.lastName
                         viewmodelLastName = viewmodel.getLastName();
                     }
-                    updateLiveDataRegistration(1, viewmodelLastName);
+                    updateLiveDataRegistration(0, viewmodelLastName);
 
 
                     if (viewmodelLastName != null) {
@@ -632,19 +624,27 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
                         viewmodelLastNameGetValue = viewmodelLastName.getValue();
                     }
             }
-            if ((dirtyFlags & 0xc04L) != 0) {
+            if ((dirtyFlags & 0xc02L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.city
                         viewmodelCity = viewmodel.getCity();
                     }
-                    updateLiveDataRegistration(2, viewmodelCity);
+                    updateLiveDataRegistration(1, viewmodelCity);
 
 
                     if (viewmodelCity != null) {
                         // read viewmodel.city.getValue()
                         viewmodelCityGetValue = viewmodelCity.getValue();
                     }
+            }
+            if ((dirtyFlags & 0xc04L) != 0) {
+
+                    if (viewmodel != null) {
+                        // read viewmodel.states
+                        viewmodelStates = viewmodel.getStates();
+                    }
+                    updateRegistration(2, viewmodelStates);
             }
             if ((dirtyFlags & 0xc08L) != 0) {
 
@@ -782,7 +782,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextAddressTwo, viewmodelAddressTwoGetValue);
         }
-        if ((dirtyFlags & 0xc04L) != 0) {
+        if ((dirtyFlags & 0xc02L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextCity, viewmodelCityGetValue);
@@ -792,7 +792,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextFirstName, viewmodelFirstNameGetValue);
         }
-        if ((dirtyFlags & 0xc02L) != 0) {
+        if ((dirtyFlags & 0xc01L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextLastName, viewmodelLastNameGetValue);
@@ -807,10 +807,10 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextZipcode, viewmodelZipCodeGetValue);
         }
-        if ((dirtyFlags & 0xc01L) != 0) {
+        if ((dirtyFlags & 0xc04L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.AbsSpinnerBindingAdapter.setEntries(this.spinnerStates, viewmodelStatesArray);
+            androidx.databinding.adapters.AbsSpinnerBindingAdapter.setEntries(this.spinnerStates, viewmodelStates);
         }
         if ((dirtyFlags & 0xc08L) != 0) {
             // api target 1
@@ -839,9 +839,9 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): viewmodel.statesArray
-        flag 1 (0x2L): viewmodel.lastName
-        flag 2 (0x3L): viewmodel.city
+        flag 0 (0x1L): viewmodel.lastName
+        flag 1 (0x2L): viewmodel.city
+        flag 2 (0x3L): viewmodel.states
         flag 3 (0x4L): viewmodel.state
         flag 4 (0x5L): viewmodel.phoneNumber
         flag 5 (0x6L): viewmodel.zipCode

@@ -44,7 +44,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     @Bindable
     val zipCode = MutableLiveData("")
 
-    val statesArray = ObservableArrayList<String>()
+    val states = ObservableArrayList<String>()
 
     @Bindable
     val submitEnabled = MediatorLiveData<Boolean>()
@@ -55,8 +55,10 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
         val call = request.getStates()
         call.enqueue(object : Callback<List<String>> {
             override fun onResponse(call: Call<List<String>>?, response: Response<List<String>>) {
+                states.add("Select a State")
+                
                 if (response.isSuccessful) {
-                    statesArray.addAll(response.body())
+                    states.addAll(response.body())
                 }
             }
 
@@ -110,7 +112,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
                 addressOne.value!!,
                 addressTwo.value!!,
                 city.value!!,
-                this@MainActivityViewModel.statesArray[state.value!!],
+                this@MainActivityViewModel.states[state.value!!],
                 zipCode.value!!,
         )
 

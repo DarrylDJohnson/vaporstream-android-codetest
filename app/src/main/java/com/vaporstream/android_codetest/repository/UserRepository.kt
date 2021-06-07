@@ -3,8 +3,8 @@ package com.vaporstream.android_codetest.repository
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.vaporstream.android_codetest.database.user.UserDatabase
-import com.vaporstream.android_codetest.database.user.UserDatabaseDao
+import com.vaporstream.android_codetest.database.UserDatabase
+import com.vaporstream.android_codetest.database.UserDatabaseDao
 import com.vaporstream.android_codetest.model.User
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

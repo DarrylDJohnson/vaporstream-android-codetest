@@ -1,11 +1,10 @@
 package com.vaporstream.android_codetest
 
-import androidx.lifecycle.asLiveData
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.vaporstream.android_codetest.database.user.UserDatabase
-import com.vaporstream.android_codetest.database.user.UserDatabaseDao
+import com.vaporstream.android_codetest.database.UserDatabase
+import com.vaporstream.android_codetest.database.UserDatabaseDao
 import com.vaporstream.android_codetest.model.User
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.launch
