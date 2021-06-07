@@ -8,8 +8,7 @@ import androidx.lifecycle.*
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.repository.UserRepository
-import com.vaporstream.android_codetest.services.JsonBinEndpoints
-import com.vaporstream.android_codetest.services.StatesService
+import com.vaporstream.android_codetest.utilities.StatesInterface
 import com.vaporstream.android_codetest.utilities.*
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -21,6 +20,9 @@ class MainActivityViewModel : ViewModel(), Observable {
 
     @Inject
     lateinit var userRepository: UserRepository
+
+    @Inject
+    lateinit var statesInterface: StatesInterface
 
     @Bindable
     val firstName = MutableLiveData("")
@@ -53,34 +55,31 @@ class MainActivityViewModel : ViewModel(), Observable {
 
     init {
         //Dagger2
-        Injector.get().inject(this)
+        Injector.getComponent().inject(this)
+        //Setup Data for StatesSpinner
+        states.add("Select a State")
 
-        //Retrieves data to populate States Array
-        val request = StatesService.buildService(JsonBinEndpoints::class.java)
-        val call = request.getStates()
-        call.enqueue(object : Callback<List<String>> {
-            override fun onResponse(call: Call<List<String>>?, response: Response<List<String>>) {
-                states.add("Select a State")
+        statesInterface
+                .getStates()
+                .enqueue(object : Callback<List<String>> {
+                    override fun onResponse(call: Call<List<String>>?, response: Response<List<String>>) {
+                        if (response.isSuccessful) {
+                            states.addAll(response.body())
+                        }
+                    }
 
-                if (response.isSuccessful) {
-                    states.addAll(response.body())
-                }
-            }
+                    override fun onFailure(call: Call<List<String>>?, t: Throwable?) {
+                        Log.d(TAG, "onResponse: $t")
+                    }
+                })
 
-            override fun onFailure(call: Call<List<String>>?, t: Throwable?) {
-
-                Log.d(TAG, "onResponse: $t")
-            }
-        })
-
-        /* */
+        //
         submitEnabled.addSources(firstName, lastName, phoneNumber, addressOne, city, state, zipCode) {
             validate(firstName.value, lastName.value, phoneNumber.value, addressOne.value, city.value, state.value, zipCode.value)
                     .also { submitEnabled.value = it }
         }
 
         dummyData()
-
     }
 
     private fun validate(

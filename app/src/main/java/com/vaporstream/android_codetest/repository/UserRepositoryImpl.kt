@@ -13,7 +13,7 @@ class UserRepositoryImpl : UserRepository {
     lateinit var userDao: UserDatabaseDao
 
     init {
-        Injector.get().inject(this)
+        Injector.getComponent().inject(this)
     }
 
     override suspend fun getUser(uid: Long): User? {

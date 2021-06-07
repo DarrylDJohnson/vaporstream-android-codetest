@@ -2,10 +2,18 @@
 package com.vaporstream.android_codetest.di;
 
 import com.vaporstream.android_codetest.MyApplication;
+import com.vaporstream.android_codetest.di.modules.DatabaseModule;
+import com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvideUserDatabaseDaoFactory;
+import com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvideUserRepositoryFactory;
+import com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvidesApplicationFactory;
+import com.vaporstream.android_codetest.di.modules.NetworkModule;
+import com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideOkHttpClientFactory;
+import com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideRetrofitFactory;
+import com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideStateInterfaceFactory;
 import com.vaporstream.android_codetest.repository.UserRepository;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl_MembersInjector;
-import com.vaporstream.android_codetest.view.main.MainActivity;
+import com.vaporstream.android_codetest.utilities.StatesInterface;
 import com.vaporstream.android_codetest.view.results.ResultsActivity;
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel;
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel_MembersInjector;
@@ -14,21 +22,30 @@ import com.vaporstream.android_codetest.viewmodel.user.UserViewModel_MembersInje
 import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.inject.Provider;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
 
 @SuppressWarnings({
     "unchecked",
     "rawtypes"
 })
 public final class DaggerApplicationComponent implements ApplicationComponent {
-  private final ApplicationModule applicationModule;
+  private final DatabaseModule databaseModule;
 
   private Provider<MyApplication> providesApplicationProvider;
 
   private Provider<UserRepository> provideUserRepositoryProvider;
 
-  private DaggerApplicationComponent(ApplicationModule applicationModuleParam) {
-    this.applicationModule = applicationModuleParam;
-    initialize(applicationModuleParam);
+  private Provider<OkHttpClient> provideOkHttpClientProvider;
+
+  private Provider<Retrofit> provideRetrofitProvider;
+
+  private Provider<StatesInterface> provideStateInterfaceProvider;
+
+  private DaggerApplicationComponent(DatabaseModule databaseModuleParam,
+      NetworkModule networkModuleParam) {
+    this.databaseModule = databaseModuleParam;
+    initialize(databaseModuleParam, networkModuleParam);
   }
 
   public static Builder builder() {
@@ -36,13 +53,13 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   }
 
   @SuppressWarnings("unchecked")
-  private void initialize(final ApplicationModule applicationModuleParam) {
-    this.providesApplicationProvider = DoubleCheck.provider(ApplicationModule_ProvidesApplicationFactory.create(applicationModuleParam));
-    this.provideUserRepositoryProvider = DoubleCheck.provider(ApplicationModule_ProvideUserRepositoryFactory.create(applicationModuleParam));
-  }
-
-  @Override
-  public void inject(MainActivity activity) {
+  private void initialize(final DatabaseModule databaseModuleParam,
+      final NetworkModule networkModuleParam) {
+    this.providesApplicationProvider = DoubleCheck.provider(DatabaseModule_ProvidesApplicationFactory.create(databaseModuleParam));
+    this.provideUserRepositoryProvider = DoubleCheck.provider(DatabaseModule_ProvideUserRepositoryFactory.create(databaseModuleParam));
+    this.provideOkHttpClientProvider = DoubleCheck.provider(NetworkModule_ProvideOkHttpClientFactory.create(networkModuleParam));
+    this.provideRetrofitProvider = DoubleCheck.provider(NetworkModule_ProvideRetrofitFactory.create(networkModuleParam, provideOkHttpClientProvider));
+    this.provideStateInterfaceProvider = DoubleCheck.provider(NetworkModule_ProvideStateInterfaceFactory.create(networkModuleParam, provideRetrofitProvider));
   }
 
   @Override
@@ -72,28 +89,39 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
   private MainActivityViewModel injectMainActivityViewModel(MainActivityViewModel instance) {
     MainActivityViewModel_MembersInjector.injectUserRepository(instance, provideUserRepositoryProvider.get());
+    MainActivityViewModel_MembersInjector.injectStatesInterface(instance, provideStateInterfaceProvider.get());
     return instance;
   }
 
   private UserRepositoryImpl injectUserRepositoryImpl(UserRepositoryImpl instance) {
-    UserRepositoryImpl_MembersInjector.injectUserDao(instance, ApplicationModule_ProvideUserDatabaseDaoFactory.provideUserDatabaseDao(applicationModule));
+    UserRepositoryImpl_MembersInjector.injectUserDao(instance, DatabaseModule_ProvideUserDatabaseDaoFactory.provideUserDatabaseDao(databaseModule));
     return instance;
   }
 
   public static final class Builder {
-    private ApplicationModule applicationModule;
+    private DatabaseModule databaseModule;
+
+    private NetworkModule networkModule;
 
     private Builder() {
     }
 
-    public Builder applicationModule(ApplicationModule applicationModule) {
-      this.applicationModule = Preconditions.checkNotNull(applicationModule);
+    public Builder databaseModule(DatabaseModule databaseModule) {
+      this.databaseModule = Preconditions.checkNotNull(databaseModule);
+      return this;
+    }
+
+    public Builder networkModule(NetworkModule networkModule) {
+      this.networkModule = Preconditions.checkNotNull(networkModule);
       return this;
     }
 
     public ApplicationComponent build() {
-      Preconditions.checkBuilderRequirement(applicationModule, ApplicationModule.class);
-      return new DaggerApplicationComponent(applicationModule);
+      Preconditions.checkBuilderRequirement(databaseModule, DatabaseModule.class);
+      if (networkModule == null) {
+        this.networkModule = new NetworkModule();
+      }
+      return new DaggerApplicationComponent(databaseModule, networkModule);
     }
   }
 }

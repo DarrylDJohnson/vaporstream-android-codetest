@@ -2,19 +2,21 @@ package com.vaporstream.android_codetest
 
 import android.app.Application
 import com.vaporstream.android_codetest.di.ApplicationComponent
-import com.vaporstream.android_codetest.di.ApplicationModule
 import com.vaporstream.android_codetest.di.DaggerApplicationComponent
+import com.vaporstream.android_codetest.di.modules.DatabaseModule
+import com.vaporstream.android_codetest.di.modules.NetworkModule
 
 class MyApplication : Application() {
 
-    lateinit var component: ApplicationComponent
+    lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
-        component = DaggerApplicationComponent
+        applicationComponent = DaggerApplicationComponent
                 .builder()
-                .applicationModule(ApplicationModule(this))
+                .databaseModule(DatabaseModule(this))
+                .networkModule(NetworkModule())
                 .build()
     }
 

@@ -2,6 +2,7 @@
 package com.vaporstream.android_codetest.viewmodel.main;
 
 import com.vaporstream.android_codetest.repository.UserRepository;
+import com.vaporstream.android_codetest.utilities.StatesInterface;
 import dagger.MembersInjector;
 import dagger.internal.InjectedFieldSignature;
 import javax.inject.Provider;
@@ -13,23 +14,35 @@ import javax.inject.Provider;
 public final class MainActivityViewModel_MembersInjector implements MembersInjector<MainActivityViewModel> {
   private final Provider<UserRepository> userRepositoryProvider;
 
-  public MainActivityViewModel_MembersInjector(Provider<UserRepository> userRepositoryProvider) {
+  private final Provider<StatesInterface> statesInterfaceProvider;
+
+  public MainActivityViewModel_MembersInjector(Provider<UserRepository> userRepositoryProvider,
+      Provider<StatesInterface> statesInterfaceProvider) {
     this.userRepositoryProvider = userRepositoryProvider;
+    this.statesInterfaceProvider = statesInterfaceProvider;
   }
 
   public static MembersInjector<MainActivityViewModel> create(
-      Provider<UserRepository> userRepositoryProvider) {
-    return new MainActivityViewModel_MembersInjector(userRepositoryProvider);
+      Provider<UserRepository> userRepositoryProvider,
+      Provider<StatesInterface> statesInterfaceProvider) {
+    return new MainActivityViewModel_MembersInjector(userRepositoryProvider, statesInterfaceProvider);
   }
 
   @Override
   public void injectMembers(MainActivityViewModel instance) {
     injectUserRepository(instance, userRepositoryProvider.get());
+    injectStatesInterface(instance, statesInterfaceProvider.get());
   }
 
   @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.userRepository")
   public static void injectUserRepository(MainActivityViewModel instance,
       UserRepository userRepository) {
     instance.userRepository = userRepository;
+  }
+
+  @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.statesInterface")
+  public static void injectStatesInterface(MainActivityViewModel instance,
+      StatesInterface statesInterface) {
+    instance.statesInterface = statesInterface;
   }
 }

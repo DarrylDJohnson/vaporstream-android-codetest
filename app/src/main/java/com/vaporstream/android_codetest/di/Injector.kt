@@ -5,6 +5,6 @@ import com.vaporstream.android_codetest.MyApplication
 class Injector private constructor() {
     companion object {
         @JvmStatic
-        fun get(): ApplicationComponent = MyApplication.get().component
+        fun getComponent(): ApplicationComponent = MyApplication.get().applicationComponent
     }
 }

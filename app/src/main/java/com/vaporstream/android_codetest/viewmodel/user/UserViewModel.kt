@@ -26,7 +26,7 @@ class UserViewModel(uid: Long) : ViewModel(), Observable {
         get() = _user
 
     init {
-        Injector.get().inject(this)
+        Injector.getComponent().inject(this)
 
         viewModelScope.launch {
             _user.postValue(userRepository.getUser(uid))
