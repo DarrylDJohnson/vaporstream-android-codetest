@@ -12,10 +12,6 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule(private val application: MyApplication) {
 
-    @Singleton
-    @Provides
-    fun providesApplication(): MyApplication = application
-
     @Provides
     fun provideUserDatabaseDao(): UserDatabaseDao {
         return UserDatabase.getInstance(application).userDatabaseDao

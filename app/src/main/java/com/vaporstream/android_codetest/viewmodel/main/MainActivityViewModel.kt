@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModel
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
-import com.vaporstream.android_codetest.MyApplication
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.*
 import com.vaporstream.android_codetest.worker.InsertUserWorker
@@ -22,7 +21,7 @@ import javax.inject.Inject
 class MainActivityViewModel : ViewModel(), Observable {
 
     @Inject
-    lateinit var application: MyApplication
+    lateinit var workManager: WorkManager
 
     @Inject
     lateinit var statesInterface: StatesInterface
@@ -51,6 +50,7 @@ class MainActivityViewModel : ViewModel(), Observable {
     @Bindable
     val zipCode = MutableLiveData("")
 
+    @Bindable
     val states = ObservableArrayList<String>()
 
     @Bindable
@@ -64,21 +64,23 @@ class MainActivityViewModel : ViewModel(), Observable {
         initSubmitEnabled()
     }
 
-    private fun initStates() = statesInterface.getStates().enqueue(
-        object : Callback<List<String>> {
-            override fun onResponse(
-                call: Call<List<String>>?,
-                response: Response<List<String>>
-            ) {
-                states.add(Constants.SELECT_A_STATE)
+    private fun initStates() {
+        statesInterface.getStates().enqueue(
+            object : Callback<List<String>> {
+                override fun onResponse(
+                    call: Call<List<String>>?,
+                    response: Response<List<String>>
+                ) {
+                    states.add(Constants.SELECT_A_STATE)
 
-                if (response.isSuccessful)
-                    states.addAll(response.body())
+                    if (response.isSuccessful)
+                        states.addAll(response.body())
+                }
+
+                override fun onFailure(call: Call<List<String>>?, t: Throwable?) {}
             }
-
-            override fun onFailure(call: Call<List<String>>?, t: Throwable?) {}
-        }
-    )
+        )
+    }
 
     private fun initSubmitEnabled() = submitEnabled.addSources(
         firstName, lastName, phoneNumber, addressOne, city, state, zipCode
@@ -103,13 +105,15 @@ class MainActivityViewModel : ViewModel(), Observable {
         city: String?,
         state: Int?,
         zipCode: String?,
-    ): Boolean = firstName.isNotNullOrBlank() &&
-            lastName.isNotNullOrBlank() &&
-            phoneNumber.matchesPhoneNumber() &&
-            addressOne.isNotNullOrBlank() &&
-            city.isNotNullOrBlank() &&
-            state != 0 &&
-            zipCode.matchesZipCode()
+    ): Boolean {
+        return firstName.isNotNullOrBlank() &&
+                lastName.isNotNullOrBlank() &&
+                phoneNumber!!.matchesPhoneNumber() &&
+                addressOne.isNotNullOrBlank() &&
+                city.isNotNullOrBlank() &&
+                state != 0 &&
+                zipCode!!.matchesZipCode()
+    }
 
     fun clear() {
         firstName.value = ""
@@ -139,7 +143,7 @@ class MainActivityViewModel : ViewModel(), Observable {
             .setInputData(userData)
             .build()
 
-        WorkManager.getInstance(application.applicationContext).enqueue(request)
+        workManager.enqueue(request)
 
         return request.id
     }
