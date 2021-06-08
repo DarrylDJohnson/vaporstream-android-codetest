@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.databinding.ActivityResultsBinding
+import com.vaporstream.android_codetest.utilities.Constants
 import com.vaporstream.android_codetest.viewmodel.user.UserViewModel
 import com.vaporstream.android_codetest.viewmodel.user.UserViewModelFactory
 
@@ -19,7 +20,7 @@ class ResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_results)
 
         val extras = intent.extras
-        val uid = extras!!.getLong("uid")
+        val uid = extras!!.getLong(Constants.UID)
 
         val factory = UserViewModelFactory(uid)
         viewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)

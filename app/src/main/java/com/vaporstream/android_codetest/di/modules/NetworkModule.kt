@@ -1,6 +1,6 @@
 package com.vaporstream.android_codetest.di.modules
 
-import com.vaporstream.android_codetest.utilities.BASE_URL
+import com.vaporstream.android_codetest.utilities.Constants
 import com.vaporstream.android_codetest.utilities.StatesInterface
 import dagger.Module
 import dagger.Provides
@@ -22,7 +22,7 @@ class NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build()

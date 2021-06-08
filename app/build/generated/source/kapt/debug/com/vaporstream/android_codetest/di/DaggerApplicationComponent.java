@@ -14,7 +14,6 @@ import com.vaporstream.android_codetest.repository.UserRepository;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl_MembersInjector;
 import com.vaporstream.android_codetest.utilities.StatesInterface;
-import com.vaporstream.android_codetest.view.results.ResultsActivity;
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel;
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel_MembersInjector;
 import com.vaporstream.android_codetest.viewmodel.user.UserViewModel;
@@ -63,10 +62,6 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   }
 
   @Override
-  public void inject(ResultsActivity activity) {
-  }
-
-  @Override
   public void inject(UserViewModel userViewModel) {
     injectUserViewModel(userViewModel);
   }
@@ -88,6 +83,7 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   }
 
   private MainActivityViewModel injectMainActivityViewModel(MainActivityViewModel instance) {
+    MainActivityViewModel_MembersInjector.injectApplication(instance, providesApplicationProvider.get());
     MainActivityViewModel_MembersInjector.injectUserRepository(instance, provideUserRepositoryProvider.get());
     MainActivityViewModel_MembersInjector.injectStatesInterface(instance, provideStateInterfaceProvider.get());
     return instance;
