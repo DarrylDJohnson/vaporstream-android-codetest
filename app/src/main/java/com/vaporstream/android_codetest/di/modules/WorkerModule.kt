@@ -16,14 +16,4 @@ class WorkerModule(private val application: MyApplication) {
     fun provideWorkManager(): WorkManager {
         return WorkManager.getInstance(application.applicationContext)
     }
-
-    @Singleton
-    @Provides
-    fun provideStates(uuid: UUID): List<String>? {
-        return WorkManager.getInstance(application.applicationContext)
-            .getWorkInfoByIdLiveData(uuid)?.value?.outputData?.getStringArray(
-            Constants.STATE
-        )?.toList()
-    }
-
 }
