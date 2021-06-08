@@ -19,9 +19,10 @@ class MyApplication : Application() {
             .builder()
             .applicationModule(ApplicationModule(this))
             .databaseModule(DatabaseModule(this))
-            .networkModule(NetworkModule())
+            .networkModule(NetworkModule(this))
             .workerModule(WorkerModule(this))
             .build()
+
     }
 
     companion object {

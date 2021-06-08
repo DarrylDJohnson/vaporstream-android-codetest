@@ -286,18 +286,18 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     private androidx.databinding.InverseBindingListener spinnerStatesandroidSelectedItemPositionAttrChanged = new androidx.databinding.InverseBindingListener() {
         @Override
         public void onChange() {
-            // Inverse of viewmodel.state.getValue()
-            //         is viewmodel.state.setValue((java.lang.Integer) callbackArg_0)
+            // Inverse of viewmodel.spinnerPosition.getValue()
+            //         is viewmodel.spinnerPosition.setValue((java.lang.Integer) callbackArg_0)
             int callbackArg_0 = spinnerStates.getSelectedItemPosition();
             // localize variables for thread safety
             // viewmodel != null
             boolean viewmodelJavaLangObjectNull = false;
-            // viewmodel.state
-            androidx.lifecycle.MutableLiveData<java.lang.Integer> viewmodelState = null;
-            // viewmodel.state != null
-            boolean viewmodelStateJavaLangObjectNull = false;
-            // viewmodel.state.getValue()
-            java.lang.Integer viewmodelStateGetValue = null;
+            // viewmodel.spinnerPosition != null
+            boolean viewmodelSpinnerPositionJavaLangObjectNull = false;
+            // viewmodel.spinnerPosition
+            androidx.lifecycle.MutableLiveData<java.lang.Integer> viewmodelSpinnerPosition = null;
+            // viewmodel.spinnerPosition.getValue()
+            java.lang.Integer viewmodelSpinnerPositionGetValue = null;
             // viewmodel
             com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
@@ -307,15 +307,15 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             if (viewmodelJavaLangObjectNull) {
 
 
-                viewmodelState = viewmodel.getState();
+                viewmodelSpinnerPosition = viewmodel.getSpinnerPosition();
 
-                viewmodelStateJavaLangObjectNull = (viewmodelState) != (null);
-                if (viewmodelStateJavaLangObjectNull) {
-
-
+                viewmodelSpinnerPositionJavaLangObjectNull = (viewmodelSpinnerPosition) != (null);
+                if (viewmodelSpinnerPositionJavaLangObjectNull) {
 
 
-                    viewmodelState.setValue(((java.lang.Integer) (callbackArg_0)));
+
+
+                    viewmodelSpinnerPosition.setValue(((java.lang.Integer) (callbackArg_0)));
                 }
             }
         }
@@ -399,13 +399,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeViewmodelLastName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+                return onChangeViewmodelSpinnerPosition((androidx.lifecycle.MutableLiveData<java.lang.Integer>) object, fieldId);
             case 1 :
-                return onChangeViewmodelCity((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
+                return onChangeViewmodelLastName((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
             case 2 :
-                return onChangeViewmodelStates((androidx.databinding.ObservableArrayList<java.lang.String>) object, fieldId);
+                return onChangeViewmodelCity((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
             case 3 :
-                return onChangeViewmodelState((androidx.lifecycle.MutableLiveData<java.lang.Integer>) object, fieldId);
+                return onChangeViewmodelStates((androidx.lifecycle.LiveData<java.lang.String[]>) object, fieldId);
             case 4 :
                 return onChangeViewmodelPhoneNumber((androidx.lifecycle.MutableLiveData<java.lang.String>) object, fieldId);
             case 5 :
@@ -423,7 +423,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelLastName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelLastName, int fieldId) {
+    private boolean onChangeViewmodelSpinnerPosition(androidx.lifecycle.MutableLiveData<java.lang.Integer> ViewmodelSpinnerPosition, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
@@ -432,7 +432,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelCity(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelCity, int fieldId) {
+    private boolean onChangeViewmodelLastName(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelLastName, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x2L;
@@ -441,7 +441,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelStates(androidx.databinding.ObservableArrayList<java.lang.String> ViewmodelStates, int fieldId) {
+    private boolean onChangeViewmodelCity(androidx.lifecycle.MutableLiveData<java.lang.String> ViewmodelCity, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x4L;
@@ -450,7 +450,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         return false;
     }
-    private boolean onChangeViewmodelState(androidx.lifecycle.MutableLiveData<java.lang.Integer> ViewmodelState, int fieldId) {
+    private boolean onChangeViewmodelStates(androidx.lifecycle.LiveData<java.lang.String[]> ViewmodelStates, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x8L;
@@ -528,7 +528,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         else if (fieldId == BR.lastName) {
             synchronized(this) {
-                    mDirtyFlags |= 0x1L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
@@ -552,19 +552,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         }
         else if (fieldId == BR.city) {
             synchronized(this) {
-                    mDirtyFlags |= 0x2L;
-            }
-            return true;
-        }
-        else if (fieldId == BR.states) {
-            synchronized(this) {
                     mDirtyFlags |= 0x4L;
             }
             return true;
         }
-        else if (fieldId == BR.state) {
+        else if (fieldId == BR.spinnerPosition) {
             synchronized(this) {
-                    mDirtyFlags |= 0x8L;
+                    mDirtyFlags |= 0x1L;
             }
             return true;
         }
@@ -590,17 +584,19 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        int androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue = 0;
+        androidx.lifecycle.MutableLiveData<java.lang.Integer> viewmodelSpinnerPosition = null;
         java.lang.String viewmodelFirstNameGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelLastName = null;
+        java.lang.Integer viewmodelSpinnerPositionGetValue = null;
+        int androidxDatabindingViewDataBindingSafeUnboxViewmodelSpinnerPositionGetValue = 0;
         java.lang.String viewmodelZipCodeGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelCity = null;
-        androidx.databinding.ObservableArrayList<java.lang.String> viewmodelStates = null;
+        androidx.lifecycle.LiveData<java.lang.String[]> viewmodelStates = null;
         java.lang.String viewmodelAddressOneGetValue = null;
+        java.lang.String[] viewmodelStatesGetValue = null;
         java.lang.String viewmodelCityGetValue = null;
         java.lang.String viewmodelPhoneNumberGetValue = null;
         java.lang.Boolean viewmodelSubmitEnabledGetValue = null;
-        androidx.lifecycle.MutableLiveData<java.lang.Integer> viewmodelState = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelPhoneNumber = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelZipCode = null;
         boolean androidxDatabindingViewDataBindingSafeUnboxViewmodelSubmitEnabledGetValue = false;
@@ -608,7 +604,6 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressTwo = null;
         androidx.lifecycle.MediatorLiveData<java.lang.Boolean> viewmodelSubmitEnabled = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelAddressOne = null;
-        java.lang.Integer viewmodelStateGetValue = null;
         java.lang.String viewmodelLastNameGetValue = null;
         androidx.lifecycle.MutableLiveData<java.lang.String> viewmodelFirstName = null;
         com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
@@ -619,10 +614,28 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             if ((dirtyFlags & 0xc01L) != 0) {
 
                     if (viewmodel != null) {
+                        // read viewmodel.spinnerPosition
+                        viewmodelSpinnerPosition = viewmodel.getSpinnerPosition();
+                    }
+                    updateLiveDataRegistration(0, viewmodelSpinnerPosition);
+
+
+                    if (viewmodelSpinnerPosition != null) {
+                        // read viewmodel.spinnerPosition.getValue()
+                        viewmodelSpinnerPositionGetValue = viewmodelSpinnerPosition.getValue();
+                    }
+
+
+                    // read androidx.databinding.ViewDataBinding.safeUnbox(viewmodel.spinnerPosition.getValue())
+                    androidxDatabindingViewDataBindingSafeUnboxViewmodelSpinnerPositionGetValue = androidx.databinding.ViewDataBinding.safeUnbox(viewmodelSpinnerPositionGetValue);
+            }
+            if ((dirtyFlags & 0xc02L) != 0) {
+
+                    if (viewmodel != null) {
                         // read viewmodel.lastName
                         viewmodelLastName = viewmodel.getLastName();
                     }
-                    updateLiveDataRegistration(0, viewmodelLastName);
+                    updateLiveDataRegistration(1, viewmodelLastName);
 
 
                     if (viewmodelLastName != null) {
@@ -630,13 +643,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
                         viewmodelLastNameGetValue = viewmodelLastName.getValue();
                     }
             }
-            if ((dirtyFlags & 0xc02L) != 0) {
+            if ((dirtyFlags & 0xc04L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.city
                         viewmodelCity = viewmodel.getCity();
                     }
-                    updateLiveDataRegistration(1, viewmodelCity);
+                    updateLiveDataRegistration(2, viewmodelCity);
 
 
                     if (viewmodelCity != null) {
@@ -644,31 +657,19 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
                         viewmodelCityGetValue = viewmodelCity.getValue();
                     }
             }
-            if ((dirtyFlags & 0xc04L) != 0) {
+            if ((dirtyFlags & 0xc08L) != 0) {
 
                     if (viewmodel != null) {
                         // read viewmodel.states
                         viewmodelStates = viewmodel.getStates();
                     }
-                    updateRegistration(2, viewmodelStates);
-            }
-            if ((dirtyFlags & 0xc08L) != 0) {
+                    updateLiveDataRegistration(3, viewmodelStates);
 
-                    if (viewmodel != null) {
-                        // read viewmodel.state
-                        viewmodelState = viewmodel.getState();
+
+                    if (viewmodelStates != null) {
+                        // read viewmodel.states.getValue()
+                        viewmodelStatesGetValue = viewmodelStates.getValue();
                     }
-                    updateLiveDataRegistration(3, viewmodelState);
-
-
-                    if (viewmodelState != null) {
-                        // read viewmodel.state.getValue()
-                        viewmodelStateGetValue = viewmodelState.getValue();
-                    }
-
-
-                    // read androidx.databinding.ViewDataBinding.safeUnbox(viewmodel.state.getValue())
-                    androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue = androidx.databinding.ViewDataBinding.safeUnbox(viewmodelStateGetValue);
             }
             if ((dirtyFlags & 0xc10L) != 0) {
 
@@ -788,7 +789,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextAddressTwo, viewmodelAddressTwoGetValue);
         }
-        if ((dirtyFlags & 0xc02L) != 0) {
+        if ((dirtyFlags & 0xc04L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextCity, viewmodelCityGetValue);
@@ -798,7 +799,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextFirstName, viewmodelFirstNameGetValue);
         }
-        if ((dirtyFlags & 0xc01L) != 0) {
+        if ((dirtyFlags & 0xc02L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextLastName, viewmodelLastNameGetValue);
@@ -813,15 +814,15 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextZipcode, viewmodelZipCodeGetValue);
         }
-        if ((dirtyFlags & 0xc04L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.AbsSpinnerBindingAdapter.setEntries(this.spinnerStates, viewmodelStates);
-        }
         if ((dirtyFlags & 0xc08L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.AdapterViewBindingAdapter.setSelectedItemPosition(this.spinnerStates, androidxDatabindingViewDataBindingSafeUnboxViewmodelStateGetValue);
+            androidx.databinding.adapters.AbsSpinnerBindingAdapter.setEntries(this.spinnerStates, viewmodelStatesGetValue);
+        }
+        if ((dirtyFlags & 0xc01L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.AdapterViewBindingAdapter.setSelectedItemPosition(this.spinnerStates, androidxDatabindingViewDataBindingSafeUnboxViewmodelSpinnerPositionGetValue);
         }
     }
     // Listener Stub Implementations
@@ -845,10 +846,10 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): viewmodel.lastName
-        flag 1 (0x2L): viewmodel.city
-        flag 2 (0x3L): viewmodel.states
-        flag 3 (0x4L): viewmodel.state
+        flag 0 (0x1L): viewmodel.spinnerPosition
+        flag 1 (0x2L): viewmodel.lastName
+        flag 2 (0x3L): viewmodel.city
+        flag 3 (0x4L): viewmodel.states
         flag 4 (0x5L): viewmodel.phoneNumber
         flag 5 (0x6L): viewmodel.zipCode
         flag 6 (0x7L): viewmodel.addressTwo

@@ -6,7 +6,7 @@ object Constants {
     // States
     const val BASE_URL: String = "https://api.jsonbin.io/"
     const val SELECT_A_STATE = "Select a State"
-    const val STATES_ARRAY_LIST = "states_array_list"
+    const val STATES_ARRAY = "states_array_list"
 
     // User
     const val UID = "uid"

@@ -15,13 +15,11 @@ public class BR {
 
   public static final int phoneNumber = 6;
 
-  public static final int state = 7;
+  public static final int spinnerPosition = 7;
 
-  public static final int states = 8;
+  public static final int submitEnabled = 8;
 
-  public static final int submitEnabled = 9;
+  public static final int viewmodel = 9;
 
-  public static final int viewmodel = 10;
-
-  public static final int zipCode = 11;
+  public static final int zipCode = 10;
 }
