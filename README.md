@@ -32,4 +32,4 @@ Refactor a basic form that submits input to a `ResultsActivity` which then displ
 
 * [DONE] Incorporate `Dagger2` where you see fit.
 * [DONE] Use `Room` to save the user input to an `android_code_test` database on submission, and retrieve the data back to display.
-* Use `WorkManager` to queue up your database and/or networking jobs.
+* [DONE] Use `WorkManager` to queue up your database and/or networking jobs.

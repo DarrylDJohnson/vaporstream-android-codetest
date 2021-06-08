@@ -556,6 +556,12 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
             }
             return true;
         }
+        else if (fieldId == BR.states) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x4L;
+            }
+            return true;
+        }
         else if (fieldId == BR.state) {
             synchronized(this) {
                     mDirtyFlags |= 0x8L;
