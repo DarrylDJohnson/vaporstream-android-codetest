@@ -26,9 +26,6 @@ class MainActivityViewModel : ViewModel(), Observable {
     lateinit var application: MyApplication
 
     @Inject
-    lateinit var userRepository: UserRepository
-
-    @Inject
     lateinit var statesInterface: StatesInterface
 
     @Bindable
@@ -74,7 +71,7 @@ class MainActivityViewModel : ViewModel(), Observable {
                 call: Call<List<String>>?,
                 response: Response<List<String>>
             ) {
-                states.add("Select a State")
+                states.add(Constants.SELECT_A_STATE)
 
                 if (response.isSuccessful)
                     states.addAll(response.body())
@@ -109,11 +106,11 @@ class MainActivityViewModel : ViewModel(), Observable {
         zipCode: String?,
     ): Boolean = firstName.isNotNullOrBlank() &&
             lastName.isNotNullOrBlank() &&
-            PHONE_REGEX.toRegex().matches("$phoneNumber") &&
+            phoneNumber.matchesPhoneNumber() &&
             addressOne.isNotNullOrBlank() &&
             city.isNotNullOrBlank() &&
             state != 0 &&
-            ZIP_CODE_REGEX.toRegex().matches("$zipCode")
+            zipCode.matchesZipCode()
 
     fun clear() {
         firstName.value = ""

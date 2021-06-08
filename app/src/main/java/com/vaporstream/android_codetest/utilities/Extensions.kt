@@ -8,3 +8,6 @@ fun <T> MediatorLiveData<T>.addSources(vararg sources: LiveData<out Any>, onChan
 }
 
 fun String?.isNotNullOrBlank() = !this.isNullOrBlank()
+
+fun String?.matchesZipCode() = this?.toRegex()?.matches(Constants.ZIP_CODE_REGEX)?: false
+fun String?.matchesPhoneNumber() = this?.toRegex()?.matches(Constants.PHONE_REGEX)?: false
