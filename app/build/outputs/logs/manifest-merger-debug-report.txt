@@ -14,8 +14,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\Darry\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] C:\Users\Darry\.gradle\caches\transforms-3\d8f5161e9d1976511687fb3eecd15314\transformed\jetified-lifecycle-livedata-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\ebd8fc9075e89b773e2bb481b21a3f53\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.room:room-ktx:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\bbb00dad03a6cc905477db09c503c6b5\transformed\jetified-room-ktx-2.3.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.work:work-runtime-ktx:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\b2af30836a37841638a9601db7396d3f\transformed\work-runtime-ktx-2.6.0-beta01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.work:work-runtime-ktx:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\6db7796ccd4d9389538a0eb8d4fcea11\transformed\work-runtime-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.core:core-ktx:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\4b12eab4f523e665bdf62fc41bad0ecd\transformed\jetified-core-ktx-1.6.0-beta02\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\cec718f58cf518ba2baaade514b45e54\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Darry\.gradle\caches\transforms-3\f746aa25ae3ae9d7f653feca8d7238f4\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -30,7 +30,7 @@ MERGED from [androidx.activity:activity:1.1.0] C:\Users\Darry\.gradle\caches\tra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\86c75a1182140084f187ca33e01cb596\transformed\jetified-lifecycle-viewmodel-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Darry\.gradle\caches\transforms-3\46a2b2bb41c85049a367b13ddfe2d65e\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:17:1-32:12
-MERGED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:17:1-145:12
+MERGED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:17:1-143:12
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\e4012a45352c830c0975b9d8044597a2\transformed\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\26418fea5283bfafec6987b6221a2ddb\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Darry\.gradle\caches\transforms-3\aa61fc2ed206c846fe042888652361a4\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -48,8 +48,6 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Darry\.gradle\
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Darry\.gradle\caches\transforms-3\52465946c373d47bdce90b49e2515d72\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Darry\.gradle\caches\transforms-3\3e098ed9784c2dfdbbc5a946306fea6d\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Darry\.gradle\caches\transforms-3\8df6259466e8d4e8b171a95a63801d32\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\7586a04ea8c0002a9441d3f4bf8918d5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\5f340bdba4c1c17bbe33a13c842f3ec2\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Darry\.gradle\caches\transforms-3\e3c577cec68cfde17b8abd16d24be40d\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 INJECTED from C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml:2:1-30:12
@@ -83,20 +81,18 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Darry\.g
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Darry\.gradle\caches\transforms-3\1d63b3c7e4cdc56bc692c091060a4312\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\ebd8fc9075e89b773e2bb481b21a3f53\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\ebd8fc9075e89b773e2bb481b21a3f53\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:24:5-28:19
-MERGED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:24:5-28:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:24:5-30:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:24:5-30:19
-MERGED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:30:5-143:19
-MERGED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:30:5-143:19
+MERGED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:30:5-141:19
+MERGED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:30:5-141:19
 MERGED from [androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:5-89
 MERGED from [androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Darry\.gradle\caches\transforms-3\52465946c373d47bdce90b49e2515d72\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Darry\.gradle\caches\transforms-3\52465946c373d47bdce90b49e2515d72\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\7f8a29ecb7bbfcd598f2f3e5864c3d24\transformed\core-1.6.0-beta02\AndroidManifest.xml:24:18-86
 	android:supportsRtl
@@ -157,10 +153,10 @@ MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Darry\.grad
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\ebd8fc9075e89b773e2bb481b21a3f53\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-ktx:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\bbb00dad03a6cc905477db09c503c6b5\transformed\jetified-room-ktx-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-ktx:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\bbb00dad03a6cc905477db09c503c6b5\transformed\jetified-room-ktx-2.3.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.work:work-runtime-ktx:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\b2af30836a37841638a9601db7396d3f\transformed\work-runtime-ktx-2.6.0-beta01\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.work:work-runtime-ktx:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\b2af30836a37841638a9601db7396d3f\transformed\work-runtime-ktx-2.6.0-beta01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-runtime-ktx:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\6db7796ccd4d9389538a0eb8d4fcea11\transformed\work-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-runtime-ktx:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\6db7796ccd4d9389538a0eb8d4fcea11\transformed\work-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\4b12eab4f523e665bdf62fc41bad0ecd\transformed\jetified-core-ktx-1.6.0-beta02\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.6.0-beta02] C:\Users\Darry\.gradle\caches\transforms-3\4b12eab4f523e665bdf62fc41bad0ecd\transformed\jetified-core-ktx-1.6.0-beta02\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\cec718f58cf518ba2baaade514b45e54\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
@@ -189,8 +185,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Darry\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Darry\.gradle\caches\transforms-3\46a2b2bb41c85049a367b13ddfe2d65e\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\e4012a45352c830c0975b9d8044597a2\transformed\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\e4012a45352c830c0975b9d8044597a2\transformed\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\26418fea5283bfafec6987b6221a2ddb\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
@@ -225,10 +221,6 @@ MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Darry\.gradle\cach
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Darry\.gradle\caches\transforms-3\3e098ed9784c2dfdbbc5a946306fea6d\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Darry\.gradle\caches\transforms-3\8df6259466e8d4e8b171a95a63801d32\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Darry\.gradle\caches\transforms-3\8df6259466e8d4e8b171a95a63801d32\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\7586a04ea8c0002a9441d3f4bf8918d5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\7586a04ea8c0002a9441d3f4bf8918d5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\5f340bdba4c1c17bbe33a13c842f3ec2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\5f340bdba4c1c17bbe33a13c842f3ec2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Darry\.gradle\caches\transforms-3\e3c577cec68cfde17b8abd16d24be40d\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -244,11 +236,11 @@ INJECTED from C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main
 		ADDED from C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Darry\AndroidStudioProjects\android-codetest\app\src\main\AndroidManifest.xml
 service#androidx.work.multiprocess.RemoteWorkManagerService
-ADDED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:25:9-27:40
+ADDED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:25:9-27:40
 	android:exported
-		ADDED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.work:work-multiprocess:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\7c0331db2dc3aa297353a81e22735e79\transformed\jetified-work-multiprocess-2.6.0-beta01\AndroidManifest.xml:26:13-79
+		ADDED from [androidx.work:work-multiprocess:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\1605cadc8a82f39e133dbdee1bd36595\transformed\jetified-work-multiprocess-2.5.0\AndroidManifest.xml:26:13-79
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
 	android:authorities
@@ -260,237 +252,233 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\c
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Darry\.gradle\caches\transforms-3\c0e59090891518496b0a9f1df10c0d99\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:25:5-68
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:25:22-65
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:25:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:26:5-79
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:26:5-79
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:26:22-76
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:26:22-76
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:27:5-81
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:27:5-81
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:27:22-78
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:27:22-78
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:28:5-77
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:28:5-77
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:28:22-74
-provider#androidx.startup.InitializationProvider
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:31:9-39:20
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Darry\.gradle\caches\transforms-3\4d508bb70dbb1e9bc00359e0efd80815\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
-	tools:node
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:35:13-31
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:28:22-74
+provider#androidx.work.impl.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:31:9-37:35
 	android:authorities
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:33:13-68
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:33:13-68
+	android:multiprocess
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:36:13-40
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:34:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:35:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:34:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:32:13-67
-meta-data#androidx.work.WorkManagerInitializer
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:36:13-38:52
-	android:value
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:38:17-49
-	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:37:17-68
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:32:13-69
 service#androidx.work.impl.background.systemalarm.SystemAlarmService
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:41:9-46:35
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:39:9-44:35
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:44:13-72
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:42:13-72
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:45:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:43:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:46:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:44:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:43:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:41:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:42:13-88
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:40:13-88
 service#androidx.work.impl.background.systemjob.SystemJobService
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:47:9-53:35
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:45:9-51:35
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:50:13-70
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:48:13-70
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:51:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:49:13-36
 	android:permission
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:52:13-69
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:50:13-69
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:53:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:51:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:49:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:47:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:48:13-84
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:46:13-84
 service#androidx.work.impl.foreground.SystemForegroundService
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:54:9-59:35
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:52:9-57:35
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:57:13-77
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:55:13-77
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:58:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:56:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:59:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:57:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:56:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:54:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:55:13-81
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:53:13-81
 receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:61:9-66:35
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:59:9-64:35
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:64:13-35
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:62:13-35
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:65:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:63:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:66:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:64:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:63:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:61:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:62:13-88
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:60:13-88
 receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:67:9-77:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:65:9-75:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:70:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:68:13-36
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:71:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:69:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:72:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:70:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:69:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:67:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:68:13-106
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:66:13-106
 intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:73:13-76:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:71:13-74:29
 action#android.intent.action.ACTION_POWER_CONNECTED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:74:17-87
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:72:17-87
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:74:25-84
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:72:25-84
 action#android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:75:17-90
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:73:17-90
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:75:25-87
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:73:25-87
 receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:78:9-88:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:76:9-86:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:81:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:79:13-36
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:82:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:80:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:83:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:81:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:80:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:78:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:79:13-104
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:77:13-104
 intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:84:13-87:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:82:13-85:29
 action#android.intent.action.BATTERY_OKAY
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:85:17-77
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:83:17-77
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:85:25-74
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:83:25-74
 action#android.intent.action.BATTERY_LOW
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:86:17-76
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:84:17-76
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:86:25-73
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:84:25-73
 receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:89:9-99:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:87:9-97:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:92:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:90:13-36
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:93:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:91:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:94:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:92:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:91:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:89:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:90:13-104
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:88:13-104
 intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:95:13-98:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:93:13-96:29
 action#android.intent.action.DEVICE_STORAGE_LOW
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:96:17-83
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:94:17-83
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:96:25-80
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:94:25-80
 action#android.intent.action.DEVICE_STORAGE_OK
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:97:17-82
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:95:17-82
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:97:25-79
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:95:25-79
 receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:100:9-109:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:98:9-107:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:103:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:101:13-36
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:104:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:102:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:105:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:103:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:102:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:100:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:101:13-103
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:99:13-103
 intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:106:13-108:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:104:13-106:29
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:107:17-79
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:105:17-79
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:107:25-76
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:105:25-76
 receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:110:9-121:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:108:9-119:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:113:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:111:13-36
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:114:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:112:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:115:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:113:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:112:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:110:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:111:13-88
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:109:13-88
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:116:13-120:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:114:13-118:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:117:17-79
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:115:17-79
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:117:25-76
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:115:25-76
 action#android.intent.action.TIME_SET
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:118:17-73
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:116:17-73
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:118:25-70
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:116:25-70
 action#android.intent.action.TIMEZONE_CHANGED
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:119:17-81
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:117:17-81
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:119:25-78
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:117:25-78
 receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:122:9-131:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:120:9-129:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:125:13-72
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:123:13-72
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:126:13-37
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:124:13-37
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:127:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:125:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:124:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:122:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:123:13-99
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:121:13-99
 intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:128:13-130:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:126:13-128:29
 action#androidx.work.impl.background.systemalarm.UpdateProxies
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:129:17-98
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:127:17-98
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:129:25-95
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:127:25-95
 receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:132:9-142:20
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:130:9-140:20
 	android:enabled
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:135:13-35
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:133:13-35
 	android:exported
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:136:13-36
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:134:13-36
 	android:permission
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:137:13-57
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:135:13-57
 	tools:targetApi
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:138:13-32
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:136:13-32
 	android:directBootAware
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:134:13-44
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:132:13-44
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:133:13-78
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:131:13-78
 intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:139:13-141:29
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:137:13-139:29
 action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
-ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:140:17-88
+ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:138:17-88
 	android:name
-		ADDED from [androidx.work:work-runtime:2.6.0-beta01] C:\Users\Darry\.gradle\caches\transforms-3\22550ea8e0c393f89b01148c16114739\transformed\work-runtime-2.6.0-beta01\AndroidManifest.xml:140:25-85
+		ADDED from [androidx.work:work-runtime:2.5.0] C:\Users\Darry\.gradle\caches\transforms-3\d219e0516a51faa2180977c4d48bb38c\transformed\work-runtime-2.5.0\AndroidManifest.xml:138:25-85
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.3.0] C:\Users\Darry\.gradle\caches\transforms-3\3bb8b28c1835400e6b53f5188a0b60d7\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
 	android:exported

@@ -98,20 +98,16 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
   }
 
   @Override
-  public Object insert(final User user, final Continuation<? super Long> p1) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
-      @Override
-      public Long call() throws Exception {
-        __db.beginTransaction();
-        try {
-          long _result = __insertionAdapterOfUser.insertAndReturnId(user);
-          __db.setTransactionSuccessful();
-          return _result;
-        } finally {
-          __db.endTransaction();
-        }
-      }
-    }, p1);
+  public long insert(final User user) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      long _result = __insertionAdapterOfUser.insertAndReturnId(user);
+      __db.setTransactionSuccessful();
+      return _result;
+    } finally {
+      __db.endTransaction();
+    }
   }
 
   @Override

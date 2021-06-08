@@ -1,14 +1,11 @@
 package com.vaporstream.android_codetest.viewmodel.main
 
-import android.app.Application
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.work.OneTimeWorkRequest
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
@@ -64,51 +61,42 @@ class MainActivityViewModel : ViewModel(), Observable {
     val submitEnabled = MediatorLiveData<Boolean>()
 
     init {
-        //Dagger2
         Injector.getComponent().inject(this)
-        //Setup Data for StatesSpinner
-        states.add("Select a State")
 
-        statesInterface
-            .getStates()
-            .enqueue(object : Callback<List<String>> {
-                override fun onResponse(
-                    call: Call<List<String>>?,
-                    response: Response<List<String>>
-                ) {
-                    if (response.isSuccessful) {
-                        states.addAll(response.body())
-                    }
-                }
+        initStates()
 
-                override fun onFailure(call: Call<List<String>>?, t: Throwable?) {
-                    Log.d(TAG, "onResponse: $t")
-                }
-            })
+        initSubmitEnabled()
+    }
 
-        //
-        submitEnabled.addSources(
-            firstName,
-            lastName,
-            phoneNumber,
-            addressOne,
-            city,
-            state,
-            zipCode
-        ) {
-            validate(
-                firstName.value,
-                lastName.value,
-                phoneNumber.value,
-                addressOne.value,
-                city.value,
-                state.value,
-                zipCode.value
-            )
-                .also { submitEnabled.value = it }
+    private fun initStates() = statesInterface.getStates().enqueue(
+        object : Callback<List<String>> {
+            override fun onResponse(
+                call: Call<List<String>>?,
+                response: Response<List<String>>
+            ) {
+                states.add("Select a State")
+
+                if (response.isSuccessful)
+                    states.addAll(response.body())
+            }
+
+            override fun onFailure(call: Call<List<String>>?, t: Throwable?) {}
         }
+    )
 
-        dummyData()
+    private fun initSubmitEnabled() = submitEnabled.addSources(
+        firstName, lastName, phoneNumber, addressOne, city, state, zipCode
+    ) {
+        validate(
+            firstName.value,
+            lastName.value,
+            phoneNumber.value,
+            addressOne.value,
+            city.value,
+            state.value,
+            zipCode.value
+        )
+            .also { submitEnabled.value = it }
     }
 
     private fun validate(
@@ -119,15 +107,13 @@ class MainActivityViewModel : ViewModel(), Observable {
         city: String?,
         state: Int?,
         zipCode: String?,
-    ): Boolean {
-        return firstName.isNotNullOrBlank() &&
-                lastName.isNotNullOrBlank() &&
-                PHONE_REGEX.toRegex().matches("$phoneNumber") &&
-                addressOne.isNotNullOrBlank() &&
-                city.isNotNullOrBlank() &&
-                state != 0 &&
-                ZIP_CODE_REGEX.toRegex().matches("$zipCode")
-    }
+    ): Boolean = firstName.isNotNullOrBlank() &&
+            lastName.isNotNullOrBlank() &&
+            PHONE_REGEX.toRegex().matches("$phoneNumber") &&
+            addressOne.isNotNullOrBlank() &&
+            city.isNotNullOrBlank() &&
+            state != 0 &&
+            ZIP_CODE_REGEX.toRegex().matches("$zipCode")
 
     fun clear() {
         firstName.value = ""
@@ -153,34 +139,16 @@ class MainActivityViewModel : ViewModel(), Observable {
             Constants.ZIP_CODE to zipCode.value,
         )
 
-        OneTimeWorkRequestBuilder<InsertUserWorker>()
-
         val request = OneTimeWorkRequestBuilder<InsertUserWorker>()
             .setInputData(userData)
             .build()
 
-        Log.d(TAG, "submit: userData $request")
-
-        WorkManager.getInstance(application).enqueue(request)
+        WorkManager.getInstance(application.applicationContext).enqueue(request)
 
         return request.id
-    }
-
-    fun dummyData() {
-        firstName.value = "First"
-        lastName.value = "Last"
-        phoneNumber.value = "1234567890"
-        addressOne.value = "123 Street"
-        addressTwo.value = ""
-        city.value = "City"
-        zipCode.value = "12345"
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
-
-    companion object {
-        private const val TAG = "MainActivityViewModel"
-    }
 }

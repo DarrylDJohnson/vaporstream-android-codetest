@@ -2,7 +2,6 @@ package com.vaporstream.android_codetest.view.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -35,24 +34,19 @@ class MainActivity : AppCompatActivity() {
 
             val submitId = viewModel.submit()
 
-            WorkManager.getInstance(this).getWorkInfoByIdLiveData(submitId).observe(this, Observer { info ->
+            WorkManager.getInstance(this).getWorkInfoByIdLiveData(submitId)
+                .observe(this, Observer { info ->
+                    if (info != null && info.state.isFinished) {
+                        val uid = info.outputData.getLong(
+                            Constants.UID,
+                            -1
+                        )                  //-1 because Room Database does not use negative values
 
-                Log.d(TAG, "onCreate: info $info")
-                Log.d(TAG, "onCreate: state ${info.state}")
-                Log.d(TAG, "onCreate: output data ${info.outputData}")
-
-                if (info != null && info.state.name == "SUCCESS") {
-                    val uid = info.outputData.getLong(Constants.UID, -1)                  //-1 because Room Database does not use negative values
-
-                    val resultsIntent = Intent(this, ResultsActivity::class.java)
-                    resultsIntent.putExtra(Constants.UID, uid)
-                    startActivity(resultsIntent)
-                }
-            })
+                        val resultsIntent = Intent(this, ResultsActivity::class.java)
+                        resultsIntent.putExtra(Constants.UID, uid)
+                        startActivity(resultsIntent)
+                    }
+                })
         }
-    }
-
-    companion object{
-        private const val TAG = "MainActivity"
     }
 }

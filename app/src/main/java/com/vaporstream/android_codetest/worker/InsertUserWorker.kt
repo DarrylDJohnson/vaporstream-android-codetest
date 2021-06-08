@@ -1,19 +1,18 @@
 package com.vaporstream.android_codetest.worker
 
 import android.app.Application
-import androidx.work.CoroutineWorker
+import android.content.Context
+import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.utilities.Constants
 
-class InsertUserWorker(application: Application, params: WorkerParameters) :
-    CoroutineWorker(application, params) {
+class InsertUserWorker(context: Context, params: WorkerParameters) :
+    Worker(context, params) {
 
-
-    override suspend fun doWork(): Result {
-
+    override fun doWork(): Result {
         val firstName = inputData.getString(Constants.FIRST_NAME)
         val lastName = inputData.getString(Constants.LAST_NAME)
         val phoneNumber = inputData.getString(Constants.PHONE_NUMBER)

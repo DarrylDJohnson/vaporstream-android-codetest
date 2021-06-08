@@ -15,25 +15,24 @@ androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
 com/vaporstream/android_codetest/BuildConfig.java
  com.vaporstream.android_codetest.BuildConfig
-com/vaporstream/android_codetest/database/UserDatabase_Impl.java
- com.vaporstream.android_codetest.database.UserDatabase_Impl
- com.vaporstream.android_codetest.database.UserDatabase_Impl$1
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
 com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideOkHttpClientFactory.java
  com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideOkHttpClientFactory
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/vaporstream/android_codetest/DataBindingTriggerClass.java
  com.vaporstream.android_codetest.DataBindingTriggerClass
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/vaporstream/android_codetest/viewmodel/ViewModelFactory_Factory.java
+ com.vaporstream.android_codetest.viewmodel.ViewModelFactory_Factory
+com/vaporstream/android_codetest/database/UserDatabase_Impl.java
+ com.vaporstream.android_codetest.database.UserDatabase_Impl
+ com.vaporstream.android_codetest.database.UserDatabase_Impl$1
 com/vaporstream/android_codetest/database/UserDatabaseDao_Impl.java
  com.vaporstream.android_codetest.database.UserDatabaseDao_Impl
  com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$1
  com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$2
  com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$3
- com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$4
-com/vaporstream/android_codetest/viewmodel/ViewModelFactory_Factory.java
- com.vaporstream.android_codetest.viewmodel.ViewModelFactory_Factory
 com/vaporstream/android_codetest/di/modules/DatabaseModule_ProvideUserRepositoryFactory.java
  com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvideUserRepositoryFactory
 com/vaporstream/android_codetest/di/modules/DatabaseModule_ProvideUserDatabaseDaoFactory.java
