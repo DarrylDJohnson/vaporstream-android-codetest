@@ -12,8 +12,8 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule(private val application: MyApplication) {
 
-    @Provides
     @Singleton
+    @Provides
     fun providesApplication(): MyApplication = application
 
     @Provides

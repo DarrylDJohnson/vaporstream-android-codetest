@@ -13,8 +13,8 @@ public final class DatabaseModule {
     }
     
     @org.jetbrains.annotations.NotNull()
-    @javax.inject.Singleton()
     @dagger.Provides()
+    @javax.inject.Singleton()
     public final com.vaporstream.android_codetest.MyApplication providesApplication() {
         return null;
     }

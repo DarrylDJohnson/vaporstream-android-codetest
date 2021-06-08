@@ -10,7 +10,7 @@ import com.vaporstream.android_codetest.model.User
 interface UserDatabaseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(user: User): Long
+    fun insert(user: User): Long
 
     @Query("SELECT * from user_table WHERE uid = :key")
     suspend fun get(key: Long): User?

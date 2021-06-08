@@ -36,7 +36,7 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
     this.__insertionAdapterOfUser = new EntityInsertionAdapter<User>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `user_table` (`uid`,`first_name`,`last_name`,`phone_number`,`address_one`,`address_two`,`city`,`state`,`zipcode`) VALUES (?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `user_table` (`uid`,`first_name`,`last_name`,`phone_number`,`address_one`,`address_two`,`city`,`state`,`zip_code`) VALUES (?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -98,20 +98,16 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
   }
 
   @Override
-  public Object insert(final User user, final Continuation<? super Long> p1) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
-      @Override
-      public Long call() throws Exception {
-        __db.beginTransaction();
-        try {
-          long _result = __insertionAdapterOfUser.insertAndReturnId(user);
-          __db.setTransactionSuccessful();
-          return _result;
-        } finally {
-          __db.endTransaction();
-        }
-      }
-    }, p1);
+  public long insert(final User user) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      long _result = __insertionAdapterOfUser.insertAndReturnId(user);
+      __db.setTransactionSuccessful();
+      return _result;
+    } finally {
+      __db.endTransaction();
+    }
   }
 
   @Override
@@ -148,7 +144,7 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
           final int _cursorIndexOfAddressTwo = CursorUtil.getColumnIndexOrThrow(_cursor, "address_two");
           final int _cursorIndexOfCity = CursorUtil.getColumnIndexOrThrow(_cursor, "city");
           final int _cursorIndexOfState = CursorUtil.getColumnIndexOrThrow(_cursor, "state");
-          final int _cursorIndexOfZipCode = CursorUtil.getColumnIndexOrThrow(_cursor, "zipcode");
+          final int _cursorIndexOfZipCode = CursorUtil.getColumnIndexOrThrow(_cursor, "zip_code");
           final User _result;
           if(_cursor.moveToFirst()) {
             final Long _tmpUid;

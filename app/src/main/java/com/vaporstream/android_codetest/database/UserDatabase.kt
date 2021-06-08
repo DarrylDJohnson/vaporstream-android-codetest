@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.vaporstream.android_codetest.model.User
 
-@Database(entities = [User::class], version = 4, exportSchema = false)
+@Database(entities = [User::class], version = 5, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract val userDatabaseDao: UserDatabaseDao
@@ -21,9 +21,9 @@ abstract class UserDatabase : RoomDatabase() {
 
                 if (instance == null) {
                     instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            UserDatabase::class.java,
-                            "user_database",
+                        context.applicationContext,
+                        UserDatabase::class.java,
+                        "user_database",
                     ).fallbackToDestructiveMigration(
                     ).build()
                     INSTANCE = instance
