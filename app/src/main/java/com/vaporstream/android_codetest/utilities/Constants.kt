@@ -15,6 +15,7 @@ object Constants {
     const val STATE = "state"
     const val ZIP_CODE = "zip_code"
 
-    const val PHONE_REGEX = "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$"
+    const val PHONE_REGEX =
+        "^(\\+1\\s?)?((\\(\\d{3}\\)\\s?)|(\\d{3})(\\s|-?))(\\d{3}(\\s|-?))(\\d{4})$"
     const val ZIP_CODE_REGEX = "^\\d{5}(?:[-\\s]\\d{4})?\$"
 }

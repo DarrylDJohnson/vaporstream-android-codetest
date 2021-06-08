@@ -1,6 +1,5 @@
 package com.vaporstream.android_codetest.di.modules
 
-import android.app.Application
 import com.vaporstream.android_codetest.MyApplication
 import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.database.UserDatabaseDao

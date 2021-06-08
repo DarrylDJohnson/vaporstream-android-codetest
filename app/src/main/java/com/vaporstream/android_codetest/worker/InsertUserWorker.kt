@@ -1,6 +1,5 @@
 package com.vaporstream.android_codetest.worker
 
-import android.app.Application
 import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters

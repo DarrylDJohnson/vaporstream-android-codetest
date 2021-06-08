@@ -14,10 +14,10 @@ class MyApplication : Application() {
         super.onCreate()
         INSTANCE = this
         applicationComponent = DaggerApplicationComponent
-                .builder()
-                .databaseModule(DatabaseModule(this))
-                .networkModule(NetworkModule())
-                .build()
+            .builder()
+            .databaseModule(DatabaseModule(this))
+            .networkModule(NetworkModule())
+            .build()
     }
 
     companion object {

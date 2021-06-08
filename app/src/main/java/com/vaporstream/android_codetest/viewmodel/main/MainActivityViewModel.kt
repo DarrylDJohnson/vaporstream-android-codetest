@@ -11,7 +11,6 @@ import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.vaporstream.android_codetest.MyApplication
 import com.vaporstream.android_codetest.di.Injector
-import com.vaporstream.android_codetest.repository.UserRepository
 import com.vaporstream.android_codetest.utilities.*
 import com.vaporstream.android_codetest.worker.InsertUserWorker
 import retrofit2.Call
