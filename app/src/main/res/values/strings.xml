@@ -3,6 +3,7 @@
     <string name="app_name">Android Code Test</string>
 
     <string-array name="states_array">
+        <item>Select a State</item>
         <item>Alabama</item>
         <item>Alaska</item>
         <item>American Samoa</item>

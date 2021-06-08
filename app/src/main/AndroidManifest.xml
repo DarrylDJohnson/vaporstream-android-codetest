@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.vaporstream.android_codetest">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,14 +16,14 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.vaporstream.android_codetest.view.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".results.ResultsActivity" />
+        <activity android:name="com.vaporstream.android_codetest.view.results.ResultsActivity" />
 
     </application>
 
