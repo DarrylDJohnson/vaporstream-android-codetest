@@ -1,6 +1,9 @@
 package com.vaporstream.android_codetest.di
 
-import com.vaporstream.android_codetest.di.modules.*
+import com.vaporstream.android_codetest.di.modules.DatabaseModule
+import com.vaporstream.android_codetest.di.modules.RetrofitModule
+import com.vaporstream.android_codetest.di.modules.StatesModule
+import com.vaporstream.android_codetest.di.modules.WorkerModule
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.view.main.MainActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel

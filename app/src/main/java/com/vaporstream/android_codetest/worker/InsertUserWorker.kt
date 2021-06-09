@@ -1,17 +1,12 @@
 package com.vaporstream.android_codetest.worker
 
 import android.content.Context
-import androidx.work.ListenableWorker
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import com.vaporstream.android_codetest.database.UserDatabase
-import com.vaporstream.android_codetest.database.UserDatabaseDao
-import com.vaporstream.android_codetest.di.DaggerWorkerFactory
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.utilities.Constants
-import javax.inject.Inject
-import javax.inject.Provider
 
 class InsertUserWorker(val context: Context, params: WorkerParameters) :
     Worker(context, params) {

@@ -3,7 +3,10 @@ package com.vaporstream.android_codetest
 import android.app.Application
 import com.vaporstream.android_codetest.di.ApplicationComponent
 import com.vaporstream.android_codetest.di.DaggerApplicationComponent
-import com.vaporstream.android_codetest.di.modules.*
+import com.vaporstream.android_codetest.di.modules.DatabaseModule
+import com.vaporstream.android_codetest.di.modules.RetrofitModule
+import com.vaporstream.android_codetest.di.modules.StatesModule
+import com.vaporstream.android_codetest.di.modules.WorkerModule
 
 class MyApplication : Application() {
 

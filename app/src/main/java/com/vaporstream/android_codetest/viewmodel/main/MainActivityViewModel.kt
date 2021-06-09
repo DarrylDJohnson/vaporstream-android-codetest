@@ -60,8 +60,8 @@ class MainActivityViewModel : ViewModel(), Observable {
 
             Log.d(TAG, "state.addSource: spinnerPosition: ${spinnerPosition.value}")
 
-            if(!states.value.isNullOrEmpty())
-            state.value = states.value!![it]
+            if (!states.value.isNullOrEmpty())
+                state.value = states.value!![it]
 
         }
 
@@ -143,7 +143,7 @@ class MainActivityViewModel : ViewModel(), Observable {
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
-    companion object{
+    companion object {
         private const val TAG = "MainActivityViewModel"
     }
 }
