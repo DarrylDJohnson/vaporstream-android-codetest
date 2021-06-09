@@ -74,7 +74,7 @@ class MainActivityViewModel : ViewModel(), Observable {
             state,
             zipCode
         ) {
-            validate(
+            submitEnabled.value = validate(
                 firstName.value,
                 lastName.value,
                 phoneNumber.value,
@@ -83,7 +83,6 @@ class MainActivityViewModel : ViewModel(), Observable {
                 state.value,
                 zipCode.value
             )
-                .also { submitEnabled.value = it }
         }
     }
 
@@ -114,7 +113,7 @@ class MainActivityViewModel : ViewModel(), Observable {
         addressOne.value = ""
         addressTwo.value = ""
         city.value = ""
-        state.value = ""
+        spinnerPosition.value = 0
         zipCode.value = ""
     }
 

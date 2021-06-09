@@ -4,10 +4,7 @@ import android.app.Application
 import androidx.concurrent.futures.CallbackToFutureAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.work.ListenableWorker
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import androidx.work.workDataOf
+import androidx.work.*
 import com.google.common.util.concurrent.ListenableFuture
 import com.vaporstream.android_codetest.utilities.Constants
 import com.vaporstream.android_codetest.utilities.StatesInterface
@@ -32,7 +29,11 @@ class StatesModule(private val application: Application) {
     @Provides
     fun provideGetStatesWorkerId(): UUID {
 
-        val request = OneTimeWorkRequestBuilder<GetStatesWorker>().build()
+        val constraints =
+            Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
+
+        val request =
+            OneTimeWorkRequestBuilder<GetStatesWorker>().setConstraints(constraints).build()
 
         WorkManager.getInstance(application.applicationContext).enqueue(request)
 
@@ -72,7 +73,7 @@ class StatesModule(private val application: Application) {
 
                         completer.set(ListenableWorker.Result.success(output))
                     } else {
-                        completer.set(ListenableWorker.Result.failure())
+                        completer.set(ListenableWorker.Result.retry())
                     }
                 }
 
