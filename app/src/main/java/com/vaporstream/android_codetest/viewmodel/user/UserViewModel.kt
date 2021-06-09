@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vaporstream.android_codetest.MyApplication
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.repository.UserRepository
@@ -13,9 +12,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class UserViewModel(uid: Long) : ViewModel(), Observable {
-
-    @Inject
-    lateinit var application: MyApplication
 
     @Inject
     lateinit var userRepository: UserRepository

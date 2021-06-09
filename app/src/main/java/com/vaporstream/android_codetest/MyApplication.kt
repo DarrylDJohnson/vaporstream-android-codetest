@@ -3,10 +3,7 @@ package com.vaporstream.android_codetest
 import android.app.Application
 import com.vaporstream.android_codetest.di.ApplicationComponent
 import com.vaporstream.android_codetest.di.DaggerApplicationComponent
-import com.vaporstream.android_codetest.di.modules.ApplicationModule
-import com.vaporstream.android_codetest.di.modules.DatabaseModule
-import com.vaporstream.android_codetest.di.modules.NetworkModule
-import com.vaporstream.android_codetest.di.modules.WorkerModule
+import com.vaporstream.android_codetest.di.modules.*
 
 class MyApplication : Application() {
 
@@ -17,12 +14,11 @@ class MyApplication : Application() {
         INSTANCE = this
         applicationComponent = DaggerApplicationComponent
             .builder()
-            .applicationModule(ApplicationModule(this))
             .databaseModule(DatabaseModule(this))
-            .networkModule(NetworkModule(this))
+            .retrofitModule(RetrofitModule())
+            .statesModule(StatesModule(this))
             .workerModule(WorkerModule(this))
             .build()
-
     }
 
     companion object {

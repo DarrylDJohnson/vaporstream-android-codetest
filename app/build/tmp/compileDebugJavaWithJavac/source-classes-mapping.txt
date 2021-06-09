@@ -1,5 +1,13 @@
-com/vaporstream/android_codetest/viewmodel/ViewModelFactory_Factory.java
- com.vaporstream.android_codetest.viewmodel.ViewModelFactory_Factory
+com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$1
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$2
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$3
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$4
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$5
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$6
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$7
+ com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$8
 androidx/databinding/DataBindingComponent.java
  androidx.databinding.DataBindingComponent
 com/vaporstream/android_codetest/BuildConfig.java
@@ -27,22 +35,22 @@ com/vaporstream/android_codetest/database/UserDatabaseDao_Impl.java
  com.vaporstream.android_codetest.database.UserDatabaseDao_Impl$3
 com/vaporstream/android_codetest/BR.java
  com.vaporstream.android_codetest.BR
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideRetrofitFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideRetrofitFactory
+com/vaporstream/android_codetest/di/modules/RetrofitModule_ProvideOkHttpClientFactory.java
+ com.vaporstream.android_codetest.di.modules.RetrofitModule_ProvideOkHttpClientFactory
+com/vaporstream/android_codetest/di/modules/RetrofitModule_ProvideRetrofitFactory.java
+ com.vaporstream.android_codetest.di.modules.RetrofitModule_ProvideRetrofitFactory
+com/vaporstream/android_codetest/di/modules/StatesModule_ProvideStatesWorkFactory.java
+ com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStatesWorkFactory
 com/vaporstream/android_codetest/viewmodel/user/UserViewModel_MembersInjector.java
  com.vaporstream.android_codetest.viewmodel.user.UserViewModel_MembersInjector
-com/vaporstream/android_codetest/di/modules/ApplicationModule_ProvidesApplicationFactory.java
- com.vaporstream.android_codetest.di.modules.ApplicationModule_ProvidesApplicationFactory
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideStateInterfaceFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideStateInterfaceFactory
 com/vaporstream/android_codetest/databinding/ActivityResultsBindingImpl.java
  com.vaporstream.android_codetest.databinding.ActivityResultsBindingImpl
 com/vaporstream/android_codetest/viewmodel/main/MainActivityViewModel_MembersInjector.java
  com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel_MembersInjector
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideStatesFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideStatesFactory
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideOkHttpClientFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideOkHttpClientFactory
+com/vaporstream/android_codetest/di/modules/StatesModule_ProvideGetStatesWorkerIdFactory.java
+ com.vaporstream.android_codetest.di.modules.StatesModule_ProvideGetStatesWorkerIdFactory
+com/vaporstream/android_codetest/di/modules/StatesModule_ProvideStatesFactory.java
+ com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStatesFactory
 com/vaporstream/android_codetest/di/modules/WorkerModule_ProvideWorkManagerFactory.java
  com.vaporstream.android_codetest.di.modules.WorkerModule_ProvideWorkManagerFactory
 com/vaporstream/android_codetest/worker/GetStatesWorker_MembersInjector.java
@@ -51,29 +59,17 @@ com/vaporstream/android_codetest/repository/UserRepositoryImpl_MembersInjector.j
  com.vaporstream.android_codetest.repository.UserRepositoryImpl_MembersInjector
 com/vaporstream/android_codetest/databinding/ActivityResultsBinding.java
  com.vaporstream.android_codetest.databinding.ActivityResultsBinding
+com/vaporstream/android_codetest/di/modules/StatesModule_ProvideStateInterfaceFactory.java
+ com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStateInterfaceFactory
 com/vaporstream/android_codetest/di/modules/DatabaseModule_ProvideUserRepositoryFactory.java
  com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvideUserRepositoryFactory
 com/vaporstream/android_codetest/di/modules/DatabaseModule_ProvideUserDatabaseDaoFactory.java
  com.vaporstream.android_codetest.di.modules.DatabaseModule_ProvideUserDatabaseDaoFactory
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideGetStatesWorkerIdFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideGetStatesWorkerIdFactory
 com/vaporstream/android_codetest/di/DaggerApplicationComponent.java
  com.vaporstream.android_codetest.di.DaggerApplicationComponent
  com.vaporstream.android_codetest.di.DaggerApplicationComponent$1
  com.vaporstream.android_codetest.di.DaggerApplicationComponent$Builder
-com/vaporstream/android_codetest/di/modules/NetworkModule_ProvideStatesWorkFactory.java
- com.vaporstream.android_codetest.di.modules.NetworkModule_ProvideStatesWorkFactory
 com/vaporstream/android_codetest/databinding/ActivityMainBinding.java
  com.vaporstream.android_codetest.databinding.ActivityMainBinding
 com/vaporstream/android_codetest/view/main/MainActivity_MembersInjector.java
  com.vaporstream.android_codetest.view.main.MainActivity_MembersInjector
-com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$1
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$2
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$3
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$4
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$5
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$6
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$7
- com.vaporstream.android_codetest.databinding.ActivityMainBindingImpl$8
