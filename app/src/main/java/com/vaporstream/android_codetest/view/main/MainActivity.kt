@@ -9,18 +9,25 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.work.WorkManager
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
+import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.Constants
 import com.vaporstream.android_codetest.view.results.ResultsActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var binding: ActivityMainBinding
 
+    @Inject
+    lateinit var workManager: WorkManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Injector.getComponent().inject(this)
 
         /* ViewModel */
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
@@ -30,11 +37,12 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
 
+
         binding.buttonSubmit.setOnClickListener {
 
-            val submitId = viewModel.submit()
+            val submitUUID = viewModel.submit()
 
-            WorkManager.getInstance(this).getWorkInfoByIdLiveData(submitId)
+            workManager.getWorkInfoByIdLiveData(submitUUID)
                 .observe(this, Observer { info ->
                     if (info != null && info.state.isFinished) {
                         val uid = info.outputData.getLong(

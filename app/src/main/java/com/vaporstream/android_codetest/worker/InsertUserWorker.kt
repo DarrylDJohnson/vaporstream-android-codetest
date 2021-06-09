@@ -8,7 +8,7 @@ import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.utilities.Constants
 
-class InsertUserWorker(context: Context, params: WorkerParameters) :
+class InsertUserWorker(val context: Context, params: WorkerParameters) :
     Worker(context, params) {
 
     override fun doWork(): Result {
@@ -34,7 +34,7 @@ class InsertUserWorker(context: Context, params: WorkerParameters) :
 
         val user =
             User(firstName, lastName, phoneNumber, addressOne, addressTwo, city, state, zipCode)
-        val dao = UserDatabase.getInstance(applicationContext).userDatabaseDao
+        val dao = UserDatabase.getInstance(context).userDatabaseDao
         val uid = dao.insert(user)
         val output = workDataOf(Constants.UID to uid)
 

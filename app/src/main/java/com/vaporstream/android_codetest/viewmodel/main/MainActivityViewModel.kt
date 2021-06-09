@@ -1,8 +1,9 @@
 package com.vaporstream.android_codetest.viewmodel.main
 
+import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
-import androidx.databinding.ObservableArrayList
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,9 +13,6 @@ import androidx.work.workDataOf
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.*
 import com.vaporstream.android_codetest.worker.InsertUserWorker
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.util.*
 import javax.inject.Inject
 
@@ -24,7 +22,7 @@ class MainActivityViewModel : ViewModel(), Observable {
     lateinit var workManager: WorkManager
 
     @Inject
-    lateinit var statesInterface: StatesInterface
+    lateinit var states: LiveData<Array<String>>
 
     @Bindable
     val firstName = MutableLiveData("")
@@ -45,13 +43,12 @@ class MainActivityViewModel : ViewModel(), Observable {
     val city = MutableLiveData("")
 
     @Bindable
-    val state = MutableLiveData(0)
+    val spinnerPosition = MutableLiveData(0)
 
     @Bindable
     val zipCode = MutableLiveData("")
 
-    @Bindable
-    val states = ObservableArrayList<String>()
+    val state = MediatorLiveData<String>()
 
     @Bindable
     val submitEnabled = MediatorLiveData<Boolean>()
@@ -59,43 +56,36 @@ class MainActivityViewModel : ViewModel(), Observable {
     init {
         Injector.getComponent().inject(this)
 
-        initStates()
+        state.addSource(spinnerPosition) {
 
-        initSubmitEnabled()
+            Log.d(TAG, "state.addSource: spinnerPosition: ${spinnerPosition.value}")
+
+            if (!states.value.isNullOrEmpty())
+                state.value = states.value!![it]
+
+        }
+
+        submitEnabled.addSources(
+            firstName,
+            lastName,
+            phoneNumber,
+            addressOne,
+            city,
+            state,
+            zipCode
+        ) {
+            submitEnabled.value = validate(
+                firstName.value,
+                lastName.value,
+                phoneNumber.value,
+                addressOne.value,
+                city.value,
+                state.value,
+                zipCode.value
+            )
+        }
     }
 
-    private fun initStates() {
-        statesInterface.getStates().enqueue(
-            object : Callback<List<String>> {
-                override fun onResponse(
-                    call: Call<List<String>>?,
-                    response: Response<List<String>>
-                ) {
-                    states.add(Constants.SELECT_A_STATE)
-
-                    if (response.isSuccessful)
-                        states.addAll(response.body())
-                }
-
-                override fun onFailure(call: Call<List<String>>?, t: Throwable?) {}
-            }
-        )
-    }
-
-    private fun initSubmitEnabled() = submitEnabled.addSources(
-        firstName, lastName, phoneNumber, addressOne, city, state, zipCode
-    ) {
-        validate(
-            firstName.value,
-            lastName.value,
-            phoneNumber.value,
-            addressOne.value,
-            city.value,
-            state.value,
-            zipCode.value
-        )
-            .also { submitEnabled.value = it }
-    }
 
     private fun validate(
         firstName: String?,
@@ -103,7 +93,7 @@ class MainActivityViewModel : ViewModel(), Observable {
         phoneNumber: String?,
         addressOne: String?,
         city: String?,
-        state: Int?,
+        state: String?,
         zipCode: String?,
     ): Boolean {
         return firstName.isNotNullOrBlank() &&
@@ -111,7 +101,8 @@ class MainActivityViewModel : ViewModel(), Observable {
                 phoneNumber!!.matchesPhoneNumber() &&
                 addressOne.isNotNullOrBlank() &&
                 city.isNotNullOrBlank() &&
-                state != 0 &&
+                state.isNotNullOrBlank() &&
+                state != Constants.SELECT_A_STATE &&
                 zipCode!!.matchesZipCode()
     }
 
@@ -122,12 +113,11 @@ class MainActivityViewModel : ViewModel(), Observable {
         addressOne.value = ""
         addressTwo.value = ""
         city.value = ""
-        state.value = 0
+        spinnerPosition.value = 0
         zipCode.value = ""
     }
 
     fun submit(): UUID {
-
         val userData = workDataOf(
             Constants.FIRST_NAME to firstName.value,
             Constants.LAST_NAME to lastName.value,
@@ -135,7 +125,7 @@ class MainActivityViewModel : ViewModel(), Observable {
             Constants.ADDRESS_ONE to addressOne.value,
             Constants.ADDRESS_TWO to addressTwo.value,
             Constants.CITY to city.value,
-            Constants.STATE to states[state.value!!],
+            Constants.STATE to state.value,
             Constants.ZIP_CODE to zipCode.value,
         )
 
@@ -151,4 +141,8 @@ class MainActivityViewModel : ViewModel(), Observable {
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
+
+    companion object {
+        private const val TAG = "MainActivityViewModel"
+    }
 }
