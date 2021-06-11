@@ -3,9 +3,9 @@ package com.vaporstream.android_codetest.di.modules;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.work.Data;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
-import java.util.UUID;
 import javax.inject.Provider;
 
 @SuppressWarnings({
@@ -15,26 +15,25 @@ import javax.inject.Provider;
 public final class UserModule_ProvideUidFactory implements Factory<LiveData<Long>> {
   private final UserModule module;
 
-  private final Provider<MutableLiveData<UUID>> workerRequestIdProvider;
+  private final Provider<MutableLiveData<Data>> dataProvider;
 
   public UserModule_ProvideUidFactory(UserModule module,
-      Provider<MutableLiveData<UUID>> workerRequestIdProvider) {
+      Provider<MutableLiveData<Data>> dataProvider) {
     this.module = module;
-    this.workerRequestIdProvider = workerRequestIdProvider;
+    this.dataProvider = dataProvider;
   }
 
   @Override
   public LiveData<Long> get() {
-    return provideUid(module, workerRequestIdProvider.get());
+    return provideUid(module, dataProvider.get());
   }
 
   public static UserModule_ProvideUidFactory create(UserModule module,
-      Provider<MutableLiveData<UUID>> workerRequestIdProvider) {
-    return new UserModule_ProvideUidFactory(module, workerRequestIdProvider);
+      Provider<MutableLiveData<Data>> dataProvider) {
+    return new UserModule_ProvideUidFactory(module, dataProvider);
   }
 
-  public static LiveData<Long> provideUid(UserModule instance,
-      MutableLiveData<UUID> workerRequestId) {
-    return Preconditions.checkNotNullFromProvides(instance.provideUid(workerRequestId));
+  public static LiveData<Long> provideUid(UserModule instance, MutableLiveData<Data> data) {
+    return Preconditions.checkNotNullFromProvides(instance.provideUid(data));
   }
 }

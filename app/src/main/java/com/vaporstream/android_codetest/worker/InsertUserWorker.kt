@@ -4,12 +4,21 @@ import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.vaporstream.android_codetest.database.UserDatabase
+import com.vaporstream.android_codetest.database.UserDatabaseDao
+import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.model.User
 import com.vaporstream.android_codetest.utilities.Constants
+import javax.inject.Inject
 
-class InsertUserWorker(val context: Context, params: WorkerParameters) :
+class InsertUserWorker(context: Context, params: WorkerParameters) :
     Worker(context, params) {
+
+    @Inject
+    lateinit var userDatabaseDao: UserDatabaseDao
+
+    init {
+        Injector.getComponent().inject(this)
+    }
 
     override fun doWork(): Result {
         val firstName = inputData.getString(Constants.FIRST_NAME)
@@ -34,8 +43,7 @@ class InsertUserWorker(val context: Context, params: WorkerParameters) :
 
         val user =
             User(firstName, lastName, phoneNumber, addressOne, addressTwo, city, state, zipCode)
-        val dao = UserDatabase.getInstance(context).userDatabaseDao
-        val uid = dao.insert(user)
+        val uid = userDatabaseDao.insert(user)
         val output = workDataOf(Constants.UID to uid)
 
         return Result.success(output)
