@@ -3,15 +3,18 @@ package com.vaporstream.android_codetest.di.modules
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.work.Constraints
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.vaporstream.android_codetest.database.UserDatabase
 import com.vaporstream.android_codetest.database.UserDatabaseDao
 import com.vaporstream.android_codetest.repository.UserRepository
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.utilities.Constants
+import com.vaporstream.android_codetest.worker.InsertUserWorker
 import dagger.Module
 import dagger.Provides
-import java.util.*
 import javax.inject.Singleton
 
 @Module
@@ -25,36 +28,50 @@ class UserModule(private val application: Application) {
     @Provides
     fun provideUserRepository(): UserRepository = UserRepositoryImpl()
 
-
     /**
-     * Provides a [MutableLiveData] object of type [UUID].
+     * Provides a [MutableLiveData] object of type [Data].
      *
-     * @returns a [MutableLiveData] object of type [UUID], expected to hold a [androidx.work.WorkRequest] id
+     * User data will be posted to this object from the view model.
+     *
+     * @returns a [MutableLiveData] object of type [Data], expected to hold user data to be inserted into the UserDatabase
      */
     @Singleton
     @Provides
-    fun provideUserWorkerRequestId(): MutableLiveData<UUID> = MutableLiveData<UUID>()
+    fun provideUserWorkerInputData() = MutableLiveData<Data>()
+
 
     /**
-     * Observes [workerRequestId] [LiveData] for newly posted values.
-     * Accesses a [androidx.work.WorkRequest] via the newly posted [workerRequestId] value.
+     * Observes [Data] [LiveData] for newly posted user data values.
      *
-     * Observes a [androidx.work.WorkRequest]'s [androidx.work.WorkInfo] LiveData for newly posted info.
-     * The info is expected to hold the generated uid returned when a [com.vaporstream.android_codetest.model.User]
-     * is inserted into the [UserDatabaseDao].
+     * Builds and Observes a [androidx.work.WorkRequest] of type [InsertUserWorker]
+     * to insert user data into the [UserDatabase]
+     *
+     * Observes a [androidx.work.WorkRequest]'s [androidx.work.WorkInfo] LiveData for newly posted
+     * outputs from the [InsertUserWorker] request
+     *
+     * The info is expected to hold the generated uid returned when a
+     * [com.vaporstream.android_codetest.model.User] is inserted into the [UserDatabaseDao].
      *
      * Extracts, converts and posts the uid value to a [LiveData] object of type [Long]
+     * 
      * @returns a LiveData object of type Long, expected to hold a uid
      */
     @Singleton
     @Provides
-    fun provideUid(workerRequestId: MutableLiveData<UUID>): LiveData<Long> {
+    fun provideUid(data: MutableLiveData<Data>): LiveData<Long> {
         val uidLiveData = MutableLiveData<Long>()
 
-        workerRequestId.observeForever() {
+        data.observeForever() {
+
+            val constraints = Constraints.Builder().build()
+
+            val request = OneTimeWorkRequestBuilder<InsertUserWorker>().setConstraints(constraints)
+                .setInputData(it).build()
+
+            WorkManager.getInstance(application.applicationContext).enqueue(request)
 
             WorkManager.getInstance(application.applicationContext)
-                .getWorkInfoByIdLiveData(it)
+                .getWorkInfoByIdLiveData(request.id)
                 .observeForever { info ->  //ObserveForever can present issues as it is not tied to a Lifecycle
                     if (info != null && info.state.isFinished) {
 
@@ -69,8 +86,8 @@ class UserModule(private val application: Application) {
                             info.outputData.getLong(Constants.UID, Constants.INSERT_USER_FAILED)
                     }
                 }
-        }
 
+        }
         return uidLiveData
     }
 }

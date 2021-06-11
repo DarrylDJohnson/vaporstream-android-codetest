@@ -17,5 +17,6 @@ interface ApplicationComponent {
     fun inject(mainActivityViewModel: MainActivityViewModel)
     fun inject(userRepository: UserRepositoryImpl)
     fun inject(getStatesWorker: GetStatesWorker)
+    fun inject(getStatesWorker: InsertUserWorker)
     fun inject(mainActivity: MainActivity)
 }

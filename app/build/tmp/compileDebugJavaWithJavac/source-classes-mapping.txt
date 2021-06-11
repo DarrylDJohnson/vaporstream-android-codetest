@@ -53,6 +53,10 @@ com/vaporstream/android_codetest/di/modules/UserModule_ProvideUserDatabaseDaoFac
  com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserDatabaseDaoFactory
 com/vaporstream/android_codetest/di/modules/StatesModule_ProvideStateInterfaceFactory.java
  com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStateInterfaceFactory
+com/vaporstream/android_codetest/worker/InsertUserWorker_MembersInjector.java
+ com.vaporstream.android_codetest.worker.InsertUserWorker_MembersInjector
+com/vaporstream/android_codetest/di/modules/UserModule_ProvideUserWorkerInputDataFactory.java
+ com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserWorkerInputDataFactory
 com/vaporstream/android_codetest/di/DaggerApplicationComponent.java
  com.vaporstream.android_codetest.di.DaggerApplicationComponent
  com.vaporstream.android_codetest.di.DaggerApplicationComponent$1
@@ -63,8 +67,6 @@ com/vaporstream/android_codetest/databinding/ActivityMainBinding.java
  com.vaporstream.android_codetest.databinding.ActivityMainBinding
 com/vaporstream/android_codetest/view/main/MainActivity_MembersInjector.java
  com.vaporstream.android_codetest.view.main.MainActivity_MembersInjector
-com/vaporstream/android_codetest/di/modules/UserModule_ProvideUserWorkerRequestIdFactory.java
- com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserWorkerRequestIdFactory
 com/vaporstream/android_codetest/di/modules/UserModule_ProvideUidFactory.java
  com.vaporstream.android_codetest.di.modules.UserModule_ProvideUidFactory
 com/vaporstream/android_codetest/databinding/ActivityMainBindingImpl.java

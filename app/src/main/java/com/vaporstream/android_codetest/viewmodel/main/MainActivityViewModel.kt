@@ -10,17 +10,12 @@ import androidx.lifecycle.ViewModel
 import androidx.work.*
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.*
-import com.vaporstream.android_codetest.worker.InsertUserWorker
-import java.util.*
 import javax.inject.Inject
 
 class MainActivityViewModel : ViewModel(), Observable {
 
     @Inject
-    lateinit var requestIdLiveData: MutableLiveData<UUID>
-
-    @Inject
-    lateinit var workManager: WorkManager
+    lateinit var inputData: MutableLiveData<Data>
 
     @Inject
     lateinit var states: LiveData<Array<String>>
@@ -132,17 +127,7 @@ class MainActivityViewModel : ViewModel(), Observable {
             Constants.ZIP_CODE to zipCode.value,
         )
 
-        val constraints =
-            Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
-
-        val workRequest =
-            OneTimeWorkRequestBuilder<InsertUserWorker>().setConstraints(constraints)
-                .setInputData(userData)
-                .build()
-
-        workManager.enqueue(workRequest)
-
-        requestIdLiveData.postValue(workRequest.id)
+        inputData.postValue(userData)
     }
 
     fun dummy() {
