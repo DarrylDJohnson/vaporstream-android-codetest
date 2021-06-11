@@ -33,6 +33,6 @@ public final class RetrofitModule_ProvideRetrofitFactory implements Factory<Retr
   }
 
   public static Retrofit provideRetrofit(RetrofitModule instance, OkHttpClient okHttpClient) {
-    return Preconditions.checkNotNull(instance.provideRetrofit(okHttpClient), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNullFromProvides(instance.provideRetrofit(okHttpClient));
   }
 }

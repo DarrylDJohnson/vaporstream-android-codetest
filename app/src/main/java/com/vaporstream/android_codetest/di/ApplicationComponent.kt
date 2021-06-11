@@ -1,9 +1,6 @@
 package com.vaporstream.android_codetest.di
 
-import com.vaporstream.android_codetest.di.modules.DatabaseModule
-import com.vaporstream.android_codetest.di.modules.RetrofitModule
-import com.vaporstream.android_codetest.di.modules.StatesModule
-import com.vaporstream.android_codetest.di.modules.WorkerModule
+import com.vaporstream.android_codetest.di.modules.*
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl
 import com.vaporstream.android_codetest.view.main.MainActivity
 import com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel
@@ -14,12 +11,11 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [DatabaseModule::class, RetrofitModule::class, WorkerModule::class, StatesModule::class])
+@Component(modules = [RetrofitModule::class, WorkerModule::class, StatesModule::class, UserModule::class])
 interface ApplicationComponent {
     fun inject(userViewModel: UserViewModel)
     fun inject(mainActivityViewModel: MainActivityViewModel)
     fun inject(userRepository: UserRepositoryImpl)
     fun inject(getStatesWorker: GetStatesWorker)
-    fun inject(insertUserWorker: InsertUserWorker)
     fun inject(mainActivity: MainActivity)
 }

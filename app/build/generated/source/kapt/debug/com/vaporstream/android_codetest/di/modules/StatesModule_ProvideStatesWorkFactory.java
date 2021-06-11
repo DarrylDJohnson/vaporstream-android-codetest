@@ -3,7 +3,6 @@ package com.vaporstream.android_codetest.di.modules;
 
 import androidx.work.ListenableWorker;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.vaporstream.android_codetest.utilities.StatesInterface;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.inject.Provider;
@@ -15,10 +14,10 @@ import javax.inject.Provider;
 public final class StatesModule_ProvideStatesWorkFactory implements Factory<ListenableFuture<ListenableWorker.Result>> {
   private final StatesModule module;
 
-  private final Provider<StatesInterface> statesInterfaceProvider;
+  private final Provider<StatesModule.StatesInterface> statesInterfaceProvider;
 
   public StatesModule_ProvideStatesWorkFactory(StatesModule module,
-      Provider<StatesInterface> statesInterfaceProvider) {
+      Provider<StatesModule.StatesInterface> statesInterfaceProvider) {
     this.module = module;
     this.statesInterfaceProvider = statesInterfaceProvider;
   }
@@ -29,12 +28,12 @@ public final class StatesModule_ProvideStatesWorkFactory implements Factory<List
   }
 
   public static StatesModule_ProvideStatesWorkFactory create(StatesModule module,
-      Provider<StatesInterface> statesInterfaceProvider) {
+      Provider<StatesModule.StatesInterface> statesInterfaceProvider) {
     return new StatesModule_ProvideStatesWorkFactory(module, statesInterfaceProvider);
   }
 
   public static ListenableFuture<ListenableWorker.Result> provideStatesWork(StatesModule instance,
-      StatesInterface statesInterface) {
-    return Preconditions.checkNotNull(instance.provideStatesWork(statesInterface), "Cannot return null from a non-@Nullable @Provides method");
+      StatesModule.StatesInterface statesInterface) {
+    return Preconditions.checkNotNullFromProvides(instance.provideStatesWork(statesInterface));
   }
 }

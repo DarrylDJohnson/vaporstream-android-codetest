@@ -33,3 +33,13 @@ Refactor a basic form that submits input to a `ResultsActivity` which then displ
 * [DONE] Incorporate `Dagger2` where you see fit.
 * [DONE] Use `Room` to save the user input to an `android_code_test` database on submission, and retrieve the data back to display.
 * [DONE] Use `WorkManager` to queue up your database and/or networking jobs.
+
+## appended goals [Darryl Johnson]
+
+* [DONE] Get States in the MainActivityViewModel through dependency injection. In other words, move the network calls and work managers from the ViewModel into the Modules
+* [DONE] Simulate AssistedInjection: Observe work started in the viewmodel in the MainActivity through dependency injection. (Google's @AssistedInject has issues in Dagger2 as Hilt is now preferred)
+* Concerns:
+* (1) observeForever, used in the States and User modules, is not tied to a lifecycle
+*    (A) This is useful in the UserModule. If, for example, the form were a signin form and the current user needed to be tracked, the current user uid is easily accessible via injection
+*    (B) However, the StatesModule does not need to observe the worker info forever. That observer should be removed upon a successful result.
+* (2) How does dependency injection affect testability? Can provided values be tested separately or should certain functions exist in the viewmodel for the sake of testability?

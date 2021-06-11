@@ -7,9 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import androidx.work.workDataOf
+import androidx.work.*
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.*
 import com.vaporstream.android_codetest.worker.InsertUserWorker
@@ -17,6 +15,9 @@ import java.util.*
 import javax.inject.Inject
 
 class MainActivityViewModel : ViewModel(), Observable {
+
+    @Inject
+    lateinit var requestIdLiveData: MutableLiveData<UUID>
 
     @Inject
     lateinit var workManager: WorkManager
@@ -84,6 +85,8 @@ class MainActivityViewModel : ViewModel(), Observable {
                 zipCode.value
             )
         }
+
+        dummy()
     }
 
 
@@ -117,7 +120,7 @@ class MainActivityViewModel : ViewModel(), Observable {
         zipCode.value = ""
     }
 
-    fun submit(): UUID {
+    fun submit() {
         val userData = workDataOf(
             Constants.FIRST_NAME to firstName.value,
             Constants.LAST_NAME to lastName.value,
@@ -129,13 +132,28 @@ class MainActivityViewModel : ViewModel(), Observable {
             Constants.ZIP_CODE to zipCode.value,
         )
 
-        val request = OneTimeWorkRequestBuilder<InsertUserWorker>()
-            .setInputData(userData)
-            .build()
+        val constraints =
+            Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
 
-        workManager.enqueue(request)
+        val workRequest =
+            OneTimeWorkRequestBuilder<InsertUserWorker>().setConstraints(constraints)
+                .setInputData(userData)
+                .build()
 
-        return request.id
+        workManager.enqueue(workRequest)
+
+        requestIdLiveData.postValue(workRequest.id)
+    }
+
+    fun dummy() {
+        firstName.value = "First"
+        lastName.value = "Last"
+        phoneNumber.value = "1234567890"
+        addressOne.value = "Some Address"
+        addressTwo.value = ""
+        city.value = "Some City"
+        spinnerPosition.value = 5
+        zipCode.value = "12345"
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
