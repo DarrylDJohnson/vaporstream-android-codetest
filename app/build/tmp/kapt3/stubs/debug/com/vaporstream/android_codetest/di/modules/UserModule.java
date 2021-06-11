@@ -26,9 +26,9 @@ public final class UserModule {
     }
     
     /**
-     * Provides a MutableLiveData object of type UUID.
+     * Provides a [MutableLiveData] object of type [UUID].
      *
-     * @returns a MutableLiveData object of type UUID, expected to hold a worker request id
+     * @returns a [MutableLiveData] object of type [UUID], expected to hold a [androidx.work.WorkRequest] id
      */
     @org.jetbrains.annotations.NotNull()
     @dagger.Provides()
@@ -38,15 +38,15 @@ public final class UserModule {
     }
     
     /**
-     * Observes [workerRequestId] LiveData for newly posted values.
-     * Accesses a work request via the newly posted [workerRequestId] value.
+     * Observes [workerRequestId] [LiveData] for newly posted values.
+     * Accesses a [androidx.work.WorkRequest] via the newly posted [workerRequestId] value.
      *
-     * Observes the work request's WorkInfo LiveData for newly posted workInfo.
-     * The workInfo is expected to hold the generated uid returned when a [User] is inserted into
-     * the [UserDatabaseDao].
+     * Observes a [androidx.work.WorkRequest]'s [androidx.work.WorkInfo] LiveData for newly posted info.
+     * The info is expected to hold the generated uid returned when a [com.vaporstream.android_codetest.model.User]
+     * is inserted into the [UserDatabaseDao].
      *
-     * Extracts, converts and posts the uid value to a LiveData object of type Long
-     * @returns a LiveData object of type Long which is expected to hold a uid
+     * Extracts, converts and posts the uid value to a [LiveData] object of type [Long]
+     * @returns a LiveData object of type Long, expected to hold a uid
      */
     @org.jetbrains.annotations.NotNull()
     @dagger.Provides()

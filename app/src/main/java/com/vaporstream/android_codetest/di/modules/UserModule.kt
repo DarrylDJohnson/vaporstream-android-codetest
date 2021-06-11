@@ -57,8 +57,16 @@ class UserModule(private val application: Application) {
                 .getWorkInfoByIdLiveData(it)
                 .observeForever { info ->  //ObserveForever can present issues as it is not tied to a Lifecycle
                     if (info != null && info.state.isFinished) {
-                        //RoomDatabase does not generate negative ids, so a negative return can represent an error
-                        uidLiveData.value = info.outputData.getLong(Constants.UID, -1)
+
+                        /**
+                         * [Constants.INSERT_USER_FAILED] = -1L
+                         *
+                         * The default workInfo output value is set to [Constants.INSERT_USER_FAILED]
+                         * since the RoomDatabase does generate negative ids. Therefore, a negative
+                         * value cannot represent a valid uid
+                         */
+                        uidLiveData.value =
+                            info.outputData.getLong(Constants.UID, Constants.INSERT_USER_FAILED)
                     }
                 }
         }
