@@ -32,6 +32,6 @@ public final class StatesModule_ProvideStatesFactory implements Factory<LiveData
   }
 
   public static LiveData<String[]> provideStates(StatesModule instance, UUID id) {
-    return Preconditions.checkNotNull(instance.provideStates(id), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNullFromProvides(instance.provideStates(id));
   }
 }

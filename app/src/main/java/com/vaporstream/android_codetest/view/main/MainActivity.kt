@@ -4,9 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
-import androidx.work.WorkManager
 import com.vaporstream.android_codetest.R
 import com.vaporstream.android_codetest.databinding.ActivityMainBinding
 import com.vaporstream.android_codetest.di.Injector
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     @Inject
-    lateinit var workManager: WorkManager
+    lateinit var uid: LiveData<Long>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,32 +28,23 @@ class MainActivity : AppCompatActivity() {
 
         Injector.getComponent().inject(this)
 
-        /* ViewModel */
+        // ViewModel
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
-        /* Data Binding */
+        // Data Binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
 
-
-        binding.buttonSubmit.setOnClickListener {
-
-            val submitUUID = viewModel.submit()
-
-            workManager.getWorkInfoByIdLiveData(submitUUID)
-                .observe(this, Observer { info ->
-                    if (info != null && info.state.isFinished) {
-                        val uid = info.outputData.getLong(
-                            Constants.UID,
-                            -1
-                        )                  //-1 because Room Database does not use negative values
-
-                        val resultsIntent = Intent(this, ResultsActivity::class.java)
-                        resultsIntent.putExtra(Constants.UID, uid)
-                        startActivity(resultsIntent)
-                    }
-                })
+        /** observes a LiveData object of type Long expected to hold a uid generated when
+         * a user is inserted into the UserDatabaseDao.
+         */
+        uid.observe(this) {
+            if (it != -1L) {
+                val resultsIntent = Intent(this, ResultsActivity::class.java)
+                resultsIntent.putExtra(Constants.UID, it)
+                startActivity(resultsIntent)
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ object Constants {
     const val STATE = "state"
     const val ZIP_CODE = "zip_code"
 
+    const val INSERT_USER_FAILED = -1L
 
     //Regex
     const val PHONE_REGEX =

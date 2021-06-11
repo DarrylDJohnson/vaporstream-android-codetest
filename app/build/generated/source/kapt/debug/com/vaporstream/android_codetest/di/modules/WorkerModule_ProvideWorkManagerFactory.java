@@ -26,6 +26,6 @@ public final class WorkerModule_ProvideWorkManagerFactory implements Factory<Wor
   }
 
   public static WorkManager provideWorkManager(WorkerModule instance) {
-    return Preconditions.checkNotNull(instance.provideWorkManager(), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNullFromProvides(instance.provideWorkManager());
   }
 }

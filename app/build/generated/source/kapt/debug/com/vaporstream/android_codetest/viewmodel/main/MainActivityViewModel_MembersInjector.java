@@ -2,9 +2,11 @@
 package com.vaporstream.android_codetest.viewmodel.main;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.work.WorkManager;
 import dagger.MembersInjector;
 import dagger.internal.InjectedFieldSignature;
+import java.util.UUID;
 import javax.inject.Provider;
 
 @SuppressWarnings({
@@ -12,25 +14,37 @@ import javax.inject.Provider;
     "rawtypes"
 })
 public final class MainActivityViewModel_MembersInjector implements MembersInjector<MainActivityViewModel> {
+  private final Provider<MutableLiveData<UUID>> requestIdLiveDataProvider;
+
   private final Provider<WorkManager> workManagerProvider;
 
   private final Provider<LiveData<String[]>> statesProvider;
 
-  public MainActivityViewModel_MembersInjector(Provider<WorkManager> workManagerProvider,
-      Provider<LiveData<String[]>> statesProvider) {
+  public MainActivityViewModel_MembersInjector(
+      Provider<MutableLiveData<UUID>> requestIdLiveDataProvider,
+      Provider<WorkManager> workManagerProvider, Provider<LiveData<String[]>> statesProvider) {
+    this.requestIdLiveDataProvider = requestIdLiveDataProvider;
     this.workManagerProvider = workManagerProvider;
     this.statesProvider = statesProvider;
   }
 
   public static MembersInjector<MainActivityViewModel> create(
+      Provider<MutableLiveData<UUID>> requestIdLiveDataProvider,
       Provider<WorkManager> workManagerProvider, Provider<LiveData<String[]>> statesProvider) {
-    return new MainActivityViewModel_MembersInjector(workManagerProvider, statesProvider);
+    return new MainActivityViewModel_MembersInjector(requestIdLiveDataProvider, workManagerProvider, statesProvider);
   }
 
   @Override
   public void injectMembers(MainActivityViewModel instance) {
+    injectRequestIdLiveData(instance, requestIdLiveDataProvider.get());
     injectWorkManager(instance, workManagerProvider.get());
     injectStates(instance, statesProvider.get());
+  }
+
+  @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.requestIdLiveData")
+  public static void injectRequestIdLiveData(MainActivityViewModel instance,
+      MutableLiveData<UUID> requestIdLiveData) {
+    instance.requestIdLiveData = requestIdLiveData;
   }
 
   @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.workManager")

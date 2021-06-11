@@ -26,6 +26,6 @@ public final class RetrofitModule_ProvideOkHttpClientFactory implements Factory<
   }
 
   public static OkHttpClient provideOkHttpClient(RetrofitModule instance) {
-    return Preconditions.checkNotNull(instance.provideOkHttpClient(), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNullFromProvides(instance.provideOkHttpClient());
   }
 }
