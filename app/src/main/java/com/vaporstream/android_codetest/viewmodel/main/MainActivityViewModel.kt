@@ -1,21 +1,24 @@
 package com.vaporstream.android_codetest.viewmodel.main
 
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.work.*
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.workDataOf
 import com.vaporstream.android_codetest.di.Injector
 import com.vaporstream.android_codetest.utilities.*
+import com.vaporstream.android_codetest.worker.InsertUserWorker
+import java.util.*
 import javax.inject.Inject
 
 class MainActivityViewModel : ViewModel(), Observable {
 
     @Inject
-    lateinit var inputData: MutableLiveData<Data>
+    lateinit var workManager: WorkManager
 
     @Inject
     lateinit var states: LiveData<Array<String>>
@@ -53,12 +56,8 @@ class MainActivityViewModel : ViewModel(), Observable {
         Injector.getComponent().inject(this)
 
         state.addSource(spinnerPosition) {
-
-            Log.d(TAG, "state.addSource: spinnerPosition: ${spinnerPosition.value}")
-
             if (!states.value.isNullOrEmpty())
                 state.value = states.value!![it]
-
         }
 
         submitEnabled.addSources(
@@ -80,10 +79,7 @@ class MainActivityViewModel : ViewModel(), Observable {
                 zipCode.value
             )
         }
-
-        dummy()
     }
-
 
     private fun validate(
         firstName: String?,
@@ -96,12 +92,12 @@ class MainActivityViewModel : ViewModel(), Observable {
     ): Boolean {
         return firstName.isNotNullOrBlank() &&
                 lastName.isNotNullOrBlank() &&
-                phoneNumber!!.matchesPhoneNumber() &&
+                phoneNumber.matchesPhoneNumber() &&
                 addressOne.isNotNullOrBlank() &&
                 city.isNotNullOrBlank() &&
                 state.isNotNullOrBlank() &&
                 state != Constants.SELECT_A_STATE &&
-                zipCode!!.matchesZipCode()
+                zipCode.matchesZipCode()
     }
 
     fun clear() {
@@ -115,7 +111,7 @@ class MainActivityViewModel : ViewModel(), Observable {
         zipCode.value = ""
     }
 
-    fun submit() {
+    fun submit(): UUID {
         val userData = workDataOf(
             Constants.FIRST_NAME to firstName.value,
             Constants.LAST_NAME to lastName.value,
@@ -127,25 +123,14 @@ class MainActivityViewModel : ViewModel(), Observable {
             Constants.ZIP_CODE to zipCode.value,
         )
 
-        inputData.postValue(userData)
-    }
+        val request = OneTimeWorkRequestBuilder<InsertUserWorker>().setInputData(userData).build()
 
-    fun dummy() {
-        firstName.value = "First"
-        lastName.value = "Last"
-        phoneNumber.value = "1234567890"
-        addressOne.value = "Some Address"
-        addressTwo.value = ""
-        city.value = "Some City"
-        spinnerPosition.value = 5
-        zipCode.value = "12345"
+        workManager.enqueue(request)
+
+        return request.id
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}
-
-    companion object {
-        private const val TAG = "MainActivityViewModel"
-    }
 }

@@ -12,5 +12,5 @@ fun <T> MediatorLiveData<T>.addSources(
 
 fun String?.isNotNullOrBlank() = !this.isNullOrBlank()
 
-fun String.matchesZipCode() = Constants.ZIP_CODE_REGEX.toRegex().matches(this)
-fun String.matchesPhoneNumber() = Constants.PHONE_REGEX.toRegex().matches(this)
+fun String?.matchesZipCode() = Constants.ZIP_CODE_REGEX.toRegex().matches(this ?: "")
+fun String?.matchesPhoneNumber() = Constants.PHONE_REGEX.toRegex().matches(this ?: "")

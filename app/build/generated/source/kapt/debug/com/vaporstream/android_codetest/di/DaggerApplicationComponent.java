@@ -2,9 +2,8 @@
 package com.vaporstream.android_codetest.di;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.work.Data;
 import androidx.work.ListenableWorker;
+import androidx.work.WorkManager;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.vaporstream.android_codetest.di.modules.RetrofitModule;
 import com.vaporstream.android_codetest.di.modules.RetrofitModule_ProvideOkHttpClientFactory;
@@ -15,11 +14,10 @@ import com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStateInte
 import com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStatesFactory;
 import com.vaporstream.android_codetest.di.modules.StatesModule_ProvideStatesWorkFactory;
 import com.vaporstream.android_codetest.di.modules.UserModule;
-import com.vaporstream.android_codetest.di.modules.UserModule_ProvideUidFactory;
 import com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserDatabaseDaoFactory;
 import com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserRepositoryFactory;
-import com.vaporstream.android_codetest.di.modules.UserModule_ProvideUserWorkerInputDataFactory;
 import com.vaporstream.android_codetest.di.modules.WorkerModule;
+import com.vaporstream.android_codetest.di.modules.WorkerModule_ProvideWorkManagerFactory;
 import com.vaporstream.android_codetest.repository.UserRepository;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl;
 import com.vaporstream.android_codetest.repository.UserRepositoryImpl_MembersInjector;
@@ -51,7 +49,7 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
   private Provider<UserRepository> provideUserRepositoryProvider;
 
-  private Provider<MutableLiveData<Data>> provideUserWorkerInputDataProvider;
+  private Provider<WorkManager> provideWorkManagerProvider;
 
   private Provider<UUID> provideGetStatesRequestIdProvider;
 
@@ -63,13 +61,11 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
   private Provider<StatesModule.StatesInterface> provideStateInterfaceProvider;
 
-  private Provider<LiveData<Long>> provideUidProvider;
-
   private DaggerApplicationComponent(RetrofitModule retrofitModuleParam,
-      StatesModule statesModuleParam, UserModule userModuleParam) {
+      WorkerModule workerModuleParam, StatesModule statesModuleParam, UserModule userModuleParam) {
     this.userModule = userModuleParam;
     this.statesModule = statesModuleParam;
-    initialize(retrofitModuleParam, statesModuleParam, userModuleParam);
+    initialize(retrofitModuleParam, workerModuleParam, statesModuleParam, userModuleParam);
   }
 
   public static Builder builder() {
@@ -82,15 +78,15 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
   @SuppressWarnings("unchecked")
   private void initialize(final RetrofitModule retrofitModuleParam,
-      final StatesModule statesModuleParam, final UserModule userModuleParam) {
+      final WorkerModule workerModuleParam, final StatesModule statesModuleParam,
+      final UserModule userModuleParam) {
     this.provideUserRepositoryProvider = DoubleCheck.provider(UserModule_ProvideUserRepositoryFactory.create(userModuleParam));
-    this.provideUserWorkerInputDataProvider = DoubleCheck.provider(UserModule_ProvideUserWorkerInputDataFactory.create(userModuleParam));
+    this.provideWorkManagerProvider = DoubleCheck.provider(WorkerModule_ProvideWorkManagerFactory.create(workerModuleParam));
     this.provideGetStatesRequestIdProvider = StatesModule_ProvideGetStatesRequestIdFactory.create(statesModuleParam);
     this.provideStatesProvider = DoubleCheck.provider(StatesModule_ProvideStatesFactory.create(statesModuleParam, provideGetStatesRequestIdProvider));
     this.provideOkHttpClientProvider = DoubleCheck.provider(RetrofitModule_ProvideOkHttpClientFactory.create(retrofitModuleParam));
     this.provideRetrofitProvider = DoubleCheck.provider(RetrofitModule_ProvideRetrofitFactory.create(retrofitModuleParam, provideOkHttpClientProvider));
     this.provideStateInterfaceProvider = DoubleCheck.provider(StatesModule_ProvideStateInterfaceFactory.create(statesModuleParam, provideRetrofitProvider));
-    this.provideUidProvider = DoubleCheck.provider(UserModule_ProvideUidFactory.create(userModuleParam, provideUserWorkerInputDataProvider));
   }
 
   @Override
@@ -129,7 +125,7 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   }
 
   private MainActivityViewModel injectMainActivityViewModel(MainActivityViewModel instance) {
-    MainActivityViewModel_MembersInjector.injectInputData(instance, provideUserWorkerInputDataProvider.get());
+    MainActivityViewModel_MembersInjector.injectWorkManager(instance, provideWorkManagerProvider.get());
     MainActivityViewModel_MembersInjector.injectStates(instance, provideStatesProvider.get());
     return instance;
   }
@@ -150,12 +146,14 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   }
 
   private MainActivity injectMainActivity(MainActivity instance) {
-    MainActivity_MembersInjector.injectUid(instance, provideUidProvider.get());
+    MainActivity_MembersInjector.injectWorkManager(instance, provideWorkManagerProvider.get());
     return instance;
   }
 
   public static final class Builder {
     private RetrofitModule retrofitModule;
+
+    private WorkerModule workerModule;
 
     private StatesModule statesModule;
 
@@ -169,12 +167,8 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
       return this;
     }
 
-    /**
-     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
-     */
-    @Deprecated
     public Builder workerModule(WorkerModule workerModule) {
-      Preconditions.checkNotNull(workerModule);
+      this.workerModule = Preconditions.checkNotNull(workerModule);
       return this;
     }
 
@@ -192,9 +186,10 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
       if (retrofitModule == null) {
         this.retrofitModule = new RetrofitModule();
       }
+      Preconditions.checkBuilderRequirement(workerModule, WorkerModule.class);
       Preconditions.checkBuilderRequirement(statesModule, StatesModule.class);
       Preconditions.checkBuilderRequirement(userModule, UserModule.class);
-      return new DaggerApplicationComponent(retrofitModule, statesModule, userModule);
+      return new DaggerApplicationComponent(retrofitModule, workerModule, statesModule, userModule);
     }
   }
 }

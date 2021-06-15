@@ -6,7 +6,6 @@ import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
-import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -28,8 +27,6 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<User> __insertionAdapterOfUser;
-
-  private final SharedSQLiteStatement __preparedStmtOfRemove;
 
   public UserDatabaseDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -88,13 +85,6 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
         }
       }
     };
-    this.__preparedStmtOfRemove = new SharedSQLiteStatement(__db) {
-      @Override
-      public String createQuery() {
-        final String _query = "DELETE FROM user_table";
-        return _query;
-      }
-    };
   }
 
   @Override
@@ -107,20 +97,6 @@ public final class UserDatabaseDao_Impl implements UserDatabaseDao {
       return _result;
     } finally {
       __db.endTransaction();
-    }
-  }
-
-  @Override
-  public void remove() {
-    __db.assertNotSuspendingTransaction();
-    final SupportSQLiteStatement _stmt = __preparedStmtOfRemove.acquire();
-    __db.beginTransaction();
-    try {
-      _stmt.executeUpdateDelete();
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-      __preparedStmtOfRemove.release(_stmt);
     }
   }
 

@@ -20,7 +20,7 @@ class ResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_results)
 
         val extras = intent.extras
-        val uid = extras!!.getLong(Constants.UID)
+        val uid = extras?.getLong(Constants.UID) ?: -1L
 
         val factory = UserViewModelFactory(uid)
         viewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)

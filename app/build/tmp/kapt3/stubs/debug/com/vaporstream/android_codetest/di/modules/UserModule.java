@@ -28,6 +28,8 @@ public final class UserModule {
     /**
      * Provides a [MutableLiveData] object of type [Data].
      *
+     * User data will be posted to this object from the view model.
+     *
      * @returns a [MutableLiveData] object of type [Data], expected to hold user data to be inserted into the UserDatabase
      */
     @org.jetbrains.annotations.NotNull()
@@ -38,14 +40,19 @@ public final class UserModule {
     }
     
     /**
-     * Observes [workerRequestId] [LiveData] for newly posted values.
-     * Accesses a [androidx.work.WorkRequest] via the newly posted [workerRequestId] value.
+     * Observes [Data] [LiveData] for newly posted user data values.
      *
-     * Observes a [androidx.work.WorkRequest]'s [androidx.work.WorkInfo] LiveData for newly posted info.
-     * The info is expected to hold the generated uid returned when a [com.vaporstream.android_codetest.model.User]
-     * is inserted into the [UserDatabaseDao].
+     * Builds and Observes a [androidx.work.WorkRequest] of type [InsertUserWorker]
+     * to insert user data into the [UserDatabase]
+     *
+     * Observes a [androidx.work.WorkRequest]'s [androidx.work.WorkInfo] LiveData for newly posted
+     * outputs from the [InsertUserWorker] request
+     *
+     * The info is expected to hold the generated uid returned when a
+     * [com.vaporstream.android_codetest.model.User] is inserted into the [UserDatabaseDao].
      *
      * Extracts, converts and posts the uid value to a [LiveData] object of type [Long]
+     *
      * @returns a LiveData object of type Long, expected to hold a uid
      */
     @org.jetbrains.annotations.NotNull()

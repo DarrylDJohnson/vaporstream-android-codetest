@@ -2,8 +2,7 @@
 package com.vaporstream.android_codetest.viewmodel.main;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.work.Data;
+import androidx.work.WorkManager;
 import dagger.MembersInjector;
 import dagger.internal.InjectedFieldSignature;
 import javax.inject.Provider;
@@ -13,32 +12,30 @@ import javax.inject.Provider;
     "rawtypes"
 })
 public final class MainActivityViewModel_MembersInjector implements MembersInjector<MainActivityViewModel> {
-  private final Provider<MutableLiveData<Data>> inputDataProvider;
+  private final Provider<WorkManager> workManagerProvider;
 
   private final Provider<LiveData<String[]>> statesProvider;
 
-  public MainActivityViewModel_MembersInjector(Provider<MutableLiveData<Data>> inputDataProvider,
+  public MainActivityViewModel_MembersInjector(Provider<WorkManager> workManagerProvider,
       Provider<LiveData<String[]>> statesProvider) {
-    this.inputDataProvider = inputDataProvider;
+    this.workManagerProvider = workManagerProvider;
     this.statesProvider = statesProvider;
   }
 
   public static MembersInjector<MainActivityViewModel> create(
-      Provider<MutableLiveData<Data>> inputDataProvider,
-      Provider<LiveData<String[]>> statesProvider) {
-    return new MainActivityViewModel_MembersInjector(inputDataProvider, statesProvider);
+      Provider<WorkManager> workManagerProvider, Provider<LiveData<String[]>> statesProvider) {
+    return new MainActivityViewModel_MembersInjector(workManagerProvider, statesProvider);
   }
 
   @Override
   public void injectMembers(MainActivityViewModel instance) {
-    injectInputData(instance, inputDataProvider.get());
+    injectWorkManager(instance, workManagerProvider.get());
     injectStates(instance, statesProvider.get());
   }
 
-  @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.inputData")
-  public static void injectInputData(MainActivityViewModel instance,
-      MutableLiveData<Data> inputData) {
-    instance.inputData = inputData;
+  @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.workManager")
+  public static void injectWorkManager(MainActivityViewModel instance, WorkManager workManager) {
+    instance.workManager = workManager;
   }
 
   @InjectedFieldSignature("com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel.states")

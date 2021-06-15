@@ -14,7 +14,4 @@ interface UserDatabaseDao {
 
     @Query("SELECT * from user_table WHERE uid = :key")
     suspend fun get(key: Long): User?
-
-    @Query("DELETE FROM user_table")
-    fun remove()
 }

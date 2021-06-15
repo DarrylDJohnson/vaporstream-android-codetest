@@ -20,8 +20,6 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
-    @Nullable
     private final android.view.View.OnClickListener mCallback1;
     // values
     // listeners
@@ -353,7 +351,6 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         this.spinnerStates.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback2 = new com.vaporstream.android_codetest.generated.callback.OnClickListener(this, 2);
         mCallback1 = new com.vaporstream.android_codetest.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
@@ -767,8 +764,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
         if ((dirtyFlags & 0x800L) != 0) {
             // api target 1
 
-            this.buttonClear.setOnClickListener(mCallback2);
-            this.buttonSubmit.setOnClickListener(mCallback1);
+            this.buttonClear.setOnClickListener(mCallback1);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressOne, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressOneandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextAddressTwo, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextAddressTwoandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.editTextCity, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, editTextCityandroidTextAttrChanged);
@@ -832,41 +828,19 @@ public class ActivityMainBindingImpl extends ActivityMainBinding implements com.
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
-        switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // viewmodel != null
-                boolean viewmodelJavaLangObjectNull = false;
-                // viewmodel
-                com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
+        // localize variables for thread safety
+        // viewmodel != null
+        boolean viewmodelJavaLangObjectNull = false;
+        // viewmodel
+        com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
 
 
 
-                viewmodelJavaLangObjectNull = (viewmodel) != (null);
-                if (viewmodelJavaLangObjectNull) {
+        viewmodelJavaLangObjectNull = (viewmodel) != (null);
+        if (viewmodelJavaLangObjectNull) {
 
 
-                    viewmodel.clear();
-                }
-                break;
-            }
-            case 1: {
-                // localize variables for thread safety
-                // viewmodel != null
-                boolean viewmodelJavaLangObjectNull = false;
-                // viewmodel
-                com.vaporstream.android_codetest.viewmodel.main.MainActivityViewModel viewmodel = mViewmodel;
-
-
-
-                viewmodelJavaLangObjectNull = (viewmodel) != (null);
-                if (viewmodelJavaLangObjectNull) {
-
-
-                    viewmodel.submit();
-                }
-                break;
-            }
+            viewmodel.clear();
         }
     }
     // dirty flag

@@ -27,7 +27,7 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ActivityResultsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 2
+        super(bindingComponent, root, 1
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[6]
@@ -83,7 +83,6 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
     }
 
     public void setViewmodel(@Nullable com.vaporstream.android_codetest.viewmodel.user.UserViewModel Viewmodel) {
-        updateRegistration(1, Viewmodel);
         this.mViewmodel = Viewmodel;
         synchronized(this) {
             mDirtyFlags |= 0x2L;
@@ -97,8 +96,6 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
         switch (localFieldId) {
             case 0 :
                 return onChangeViewmodelUser((androidx.lifecycle.LiveData<com.vaporstream.android_codetest.model.User>) object, fieldId);
-            case 1 :
-                return onChangeViewmodel((com.vaporstream.android_codetest.viewmodel.user.UserViewModel) object, fieldId);
         }
         return false;
     }
@@ -106,15 +103,6 @@ public class ActivityResultsBindingImpl extends ActivityResultsBinding  {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
-            }
-            return true;
-        }
-        return false;
-    }
-    private boolean onChangeViewmodel(com.vaporstream.android_codetest.viewmodel.user.UserViewModel Viewmodel, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
